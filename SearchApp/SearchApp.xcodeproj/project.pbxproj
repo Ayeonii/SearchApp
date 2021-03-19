@@ -9,21 +9,41 @@
 /* Begin PBXBuildFile section */
 		CC5E52C42604315400619C1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E52C32604315400619C1A /* AppDelegate.swift */; };
 		CC5E52C62604315400619C1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E52C52604315400619C1A /* SceneDelegate.swift */; };
-		CC5E52C82604315400619C1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E52C72604315400619C1A /* ViewController.swift */; };
 		CC5E52CB2604315400619C1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5E52C92604315400619C1A /* Main.storyboard */; };
 		CC5E52CD2604315500619C1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5E52CC2604315500619C1A /* Assets.xcassets */; };
 		CC5E52D02604315500619C1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5E52CE2604315500619C1A /* LaunchScreen.storyboard */; };
+		CC5E52E22604330000619C1A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E52E02604330000619C1A /* SearchViewController.swift */; };
+		CC5E52E32604330000619C1A /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5E52E12604330000619C1A /* SearchViewController.xib */; };
+		CC5E52E72604332E00619C1A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E52E62604332E00619C1A /* TabBarViewController.swift */; };
+		CC5E52F22604484600619C1A /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E52F02604484600619C1A /* AppDetailViewController.swift */; };
+		CC5E52F32604484600619C1A /* AppDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5E52F12604484600619C1A /* AppDetailViewController.xib */; };
+		CC5E52F82604488500619C1A /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E52F62604488500619C1A /* SearchResultViewController.swift */; };
+		CC5E52F92604488500619C1A /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5E52F72604488500619C1A /* SearchResultViewController.xib */; };
+		CC5E53502604A0BA00619C1A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E534E2604A0BA00619C1A /* SearchTableViewCell.swift */; };
+		CC5E53512604A0BA00619C1A /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5E534F2604A0BA00619C1A /* SearchTableViewCell.xib */; };
+		CC5E53542604A19E00619C1A /* RecentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E53532604A19E00619C1A /* RecentData.swift */; };
+		CC5E53592604AA9000619C1A /* StoredData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E53582604AA9000619C1A /* StoredData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC5E52C02604315400619C1A /* SearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5E52C32604315400619C1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC5E52C52604315400619C1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CC5E52C72604315400619C1A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CC5E52CA2604315400619C1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC5E52CC2604315500619C1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC5E52CF2604315500619C1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC5E52D12604315500619C1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC5E52E02604330000619C1A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CC5E52E12604330000619C1A /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		CC5E52E62604332E00619C1A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		CC5E52F02604484600619C1A /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
+		CC5E52F12604484600619C1A /* AppDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailViewController.xib; sourceTree = "<group>"; };
+		CC5E52F62604488500619C1A /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		CC5E52F72604488500619C1A /* SearchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
+		CC5E534E2604A0BA00619C1A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		CC5E534F2604A0BA00619C1A /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		CC5E53532604A19E00619C1A /* RecentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentData.swift; sourceTree = "<group>"; };
+		CC5E53582604AA9000619C1A /* StoredData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +76,65 @@
 		CC5E52C22604315400619C1A /* SearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				CC5E53572604AA8000619C1A /* Config */,
+				CC5E52EF2604482600619C1A /* AppDetail */,
+				CC5E52DF260432E300619C1A /* Search */,
 				CC5E52C32604315400619C1A /* AppDelegate.swift */,
 				CC5E52C52604315400619C1A /* SceneDelegate.swift */,
-				CC5E52C72604315400619C1A /* ViewController.swift */,
+				CC5E52E62604332E00619C1A /* TabBarViewController.swift */,
 				CC5E52C92604315400619C1A /* Main.storyboard */,
 				CC5E52CC2604315500619C1A /* Assets.xcassets */,
 				CC5E52CE2604315500619C1A /* LaunchScreen.storyboard */,
 				CC5E52D12604315500619C1A /* Info.plist */,
 			);
 			path = SearchApp;
+			sourceTree = "<group>";
+		};
+		CC5E52DF260432E300619C1A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CC5E52EC260447F900619C1A /* SearchMain */,
+				CC5E52ED2604480700619C1A /* SearchResult */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CC5E52EC260447F900619C1A /* SearchMain */ = {
+			isa = PBXGroup;
+			children = (
+				CC5E52E02604330000619C1A /* SearchViewController.swift */,
+				CC5E52E12604330000619C1A /* SearchViewController.xib */,
+				CC5E534E2604A0BA00619C1A /* SearchTableViewCell.swift */,
+				CC5E534F2604A0BA00619C1A /* SearchTableViewCell.xib */,
+				CC5E53532604A19E00619C1A /* RecentData.swift */,
+			);
+			path = SearchMain;
+			sourceTree = "<group>";
+		};
+		CC5E52ED2604480700619C1A /* SearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				CC5E52F62604488500619C1A /* SearchResultViewController.swift */,
+				CC5E52F72604488500619C1A /* SearchResultViewController.xib */,
+			);
+			path = SearchResult;
+			sourceTree = "<group>";
+		};
+		CC5E52EF2604482600619C1A /* AppDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CC5E52F02604484600619C1A /* AppDetailViewController.swift */,
+				CC5E52F12604484600619C1A /* AppDetailViewController.xib */,
+			);
+			path = AppDetail;
+			sourceTree = "<group>";
+		};
+		CC5E53572604AA8000619C1A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				CC5E53582604AA9000619C1A /* StoredData.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,8 +194,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC5E52F32604484600619C1A /* AppDetailViewController.xib in Resources */,
 				CC5E52D02604315500619C1A /* LaunchScreen.storyboard in Resources */,
 				CC5E52CD2604315500619C1A /* Assets.xcassets in Resources */,
+				CC5E52F92604488500619C1A /* SearchResultViewController.xib in Resources */,
+				CC5E53512604A0BA00619C1A /* SearchTableViewCell.xib in Resources */,
+				CC5E52E32604330000619C1A /* SearchViewController.xib in Resources */,
 				CC5E52CB2604315400619C1A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,9 +211,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC5E52C82604315400619C1A /* ViewController.swift in Sources */,
+				CC5E53542604A19E00619C1A /* RecentData.swift in Sources */,
 				CC5E52C42604315400619C1A /* AppDelegate.swift in Sources */,
+				CC5E52F22604484600619C1A /* AppDetailViewController.swift in Sources */,
+				CC5E52E22604330000619C1A /* SearchViewController.swift in Sources */,
+				CC5E53592604AA9000619C1A /* StoredData.swift in Sources */,
+				CC5E52E72604332E00619C1A /* TabBarViewController.swift in Sources */,
+				CC5E52F82604488500619C1A /* SearchResultViewController.swift in Sources */,
 				CC5E52C62604315400619C1A /* SceneDelegate.swift in Sources */,
+				CC5E53502604A0BA00619C1A /* SearchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +376,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayeon.SearchApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +395,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayeon.SearchApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
