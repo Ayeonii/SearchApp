@@ -8,6 +8,6 @@
 import Foundation
 
 
-struct RecentData {
+struct SearchRecentData {
     var text : [String]?
 }

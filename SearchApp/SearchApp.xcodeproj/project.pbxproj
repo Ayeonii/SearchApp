@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E99FAA94618BDEF94EE86DE /* Pods_SearchApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD72F3F8831BE39A0229ED7 /* Pods_SearchApp.framework */; };
 		CC5E52C42604315400619C1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E52C32604315400619C1A /* AppDelegate.swift */; };
 		CC5E52C62604315400619C1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E52C52604315400619C1A /* SceneDelegate.swift */; };
 		CC5E52CB2604315400619C1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5E52C92604315400619C1A /* Main.storyboard */; };
@@ -21,11 +22,23 @@
 		CC5E52F92604488500619C1A /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5E52F72604488500619C1A /* SearchResultViewController.xib */; };
 		CC5E53502604A0BA00619C1A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E534E2604A0BA00619C1A /* SearchTableViewCell.swift */; };
 		CC5E53512604A0BA00619C1A /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5E534F2604A0BA00619C1A /* SearchTableViewCell.xib */; };
-		CC5E53542604A19E00619C1A /* RecentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E53532604A19E00619C1A /* RecentData.swift */; };
+		CC5E53542604A19E00619C1A /* SearchRecentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E53532604A19E00619C1A /* SearchRecentData.swift */; };
 		CC5E53592604AA9000619C1A /* StoredData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E53582604AA9000619C1A /* StoredData.swift */; };
+		D6D3F67826071664008C5DBA /* SearchResultCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F67726071664008C5DBA /* SearchResultCodable.swift */; };
+		D6D3F67C260716B4008C5DBA /* CallHttpApI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F67B260716B4008C5DBA /* CallHttpApI.swift */; };
+		D6D3F67F260716C3008C5DBA /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F67E260716C3008C5DBA /* HttpManager.swift */; };
+		D6D3F68326072024008C5DBA /* HttpRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F68226072024008C5DBA /* HttpRequestData.swift */; };
+		D6D3F686260720FD008C5DBA /* HttpHeaderParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F685260720FD008C5DBA /* HttpHeaderParam.swift */; };
+		D6D3F692260736F6008C5DBA /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F690260736F6008C5DBA /* SearchResultTableViewCell.swift */; };
+		D6D3F693260736F6008C5DBA /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D3F691260736F6008C5DBA /* SearchResultTableViewCell.xib */; };
+		D6D3F6972607410C008C5DBA /* SearchResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F6962607410C008C5DBA /* SearchResultData.swift */; };
+		D6D3F69B26074224008C5DBA /* SearchTableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F69A26074224008C5DBA /* SearchTableData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FD72F3F8831BE39A0229ED7 /* Pods_SearchApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		656F2D5E246E25305D9B5F3A /* Pods-SearchApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchApp.debug.xcconfig"; path = "Target Support Files/Pods-SearchApp/Pods-SearchApp.debug.xcconfig"; sourceTree = "<group>"; };
+		6B36F68059D8F5E9822D27E9 /* Pods-SearchApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchApp.release.xcconfig"; path = "Target Support Files/Pods-SearchApp/Pods-SearchApp.release.xcconfig"; sourceTree = "<group>"; };
 		CC5E52C02604315400619C1A /* SearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5E52C32604315400619C1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC5E52C52604315400619C1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,8 +55,17 @@
 		CC5E52F72604488500619C1A /* SearchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
 		CC5E534E2604A0BA00619C1A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		CC5E534F2604A0BA00619C1A /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
-		CC5E53532604A19E00619C1A /* RecentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentData.swift; sourceTree = "<group>"; };
+		CC5E53532604A19E00619C1A /* SearchRecentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecentData.swift; sourceTree = "<group>"; };
 		CC5E53582604AA9000619C1A /* StoredData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredData.swift; sourceTree = "<group>"; };
+		D6D3F67726071664008C5DBA /* SearchResultCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCodable.swift; sourceTree = "<group>"; };
+		D6D3F67B260716B4008C5DBA /* CallHttpApI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHttpApI.swift; sourceTree = "<group>"; };
+		D6D3F67E260716C3008C5DBA /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
+		D6D3F68226072024008C5DBA /* HttpRequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestData.swift; sourceTree = "<group>"; };
+		D6D3F685260720FD008C5DBA /* HttpHeaderParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHeaderParam.swift; sourceTree = "<group>"; };
+		D6D3F690260736F6008C5DBA /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		D6D3F691260736F6008C5DBA /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
+		D6D3F6962607410C008C5DBA /* SearchResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultData.swift; sourceTree = "<group>"; };
+		D6D3F69A26074224008C5DBA /* SearchTableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +73,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E99FAA94618BDEF94EE86DE /* Pods_SearchApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12BC068A67BEC9F77F4A1B18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FD72F3F8831BE39A0229ED7 /* Pods_SearchApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		225322BBE566A949D3AFD389 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				656F2D5E246E25305D9B5F3A /* Pods-SearchApp.debug.xcconfig */,
+				6B36F68059D8F5E9822D27E9 /* Pods-SearchApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CC5E52B72604315400619C1A = {
 			isa = PBXGroup;
 			children = (
 				CC5E52C22604315400619C1A /* SearchApp */,
 				CC5E52C12604315400619C1A /* Products */,
+				225322BBE566A949D3AFD389 /* Pods */,
+				12BC068A67BEC9F77F4A1B18 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,8 +118,8 @@
 		CC5E52C22604315400619C1A /* SearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				D6D3F67A260716A0008C5DBA /* Http */,
 				CC5E53572604AA8000619C1A /* Config */,
-				CC5E52EF2604482600619C1A /* AppDetail */,
 				CC5E52DF260432E300619C1A /* Search */,
 				CC5E52C32604315400619C1A /* AppDelegate.swift */,
 				CC5E52C52604315400619C1A /* SceneDelegate.swift */,
@@ -95,6 +137,7 @@
 			children = (
 				CC5E52EC260447F900619C1A /* SearchMain */,
 				CC5E52ED2604480700619C1A /* SearchResult */,
+				CC5E52EF2604482600619C1A /* AppDetail */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -102,11 +145,10 @@
 		CC5E52EC260447F900619C1A /* SearchMain */ = {
 			isa = PBXGroup;
 			children = (
+				CC5E53532604A19E00619C1A /* SearchRecentData.swift */,
 				CC5E52E02604330000619C1A /* SearchViewController.swift */,
 				CC5E52E12604330000619C1A /* SearchViewController.xib */,
-				CC5E534E2604A0BA00619C1A /* SearchTableViewCell.swift */,
-				CC5E534F2604A0BA00619C1A /* SearchTableViewCell.xib */,
-				CC5E53532604A19E00619C1A /* RecentData.swift */,
+				D6D3F69E260742F5008C5DBA /* SearchCell */,
 			);
 			path = SearchMain;
 			sourceTree = "<group>";
@@ -114,8 +156,11 @@
 		CC5E52ED2604480700619C1A /* SearchResult */ = {
 			isa = PBXGroup;
 			children = (
+				D6D3F67726071664008C5DBA /* SearchResultCodable.swift */,
+				D6D3F6962607410C008C5DBA /* SearchResultData.swift */,
 				CC5E52F62604488500619C1A /* SearchResultViewController.swift */,
 				CC5E52F72604488500619C1A /* SearchResultViewController.xib */,
+				D6D3F68F260736CA008C5DBA /* SearchResultCell */,
 			);
 			path = SearchResult;
 			sourceTree = "<group>";
@@ -125,6 +170,7 @@
 			children = (
 				CC5E52F02604484600619C1A /* AppDetailViewController.swift */,
 				CC5E52F12604484600619C1A /* AppDetailViewController.xib */,
+				D6D3F6A726074F8D008C5DBA /* AppDetailCell */,
 			);
 			path = AppDetail;
 			sourceTree = "<group>";
@@ -137,6 +183,43 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		D6D3F67A260716A0008C5DBA /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				D6D3F67B260716B4008C5DBA /* CallHttpApI.swift */,
+				D6D3F67E260716C3008C5DBA /* HttpManager.swift */,
+				D6D3F68226072024008C5DBA /* HttpRequestData.swift */,
+				D6D3F685260720FD008C5DBA /* HttpHeaderParam.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		D6D3F68F260736CA008C5DBA /* SearchResultCell */ = {
+			isa = PBXGroup;
+			children = (
+				D6D3F69A26074224008C5DBA /* SearchTableData.swift */,
+				D6D3F690260736F6008C5DBA /* SearchResultTableViewCell.swift */,
+				D6D3F691260736F6008C5DBA /* SearchResultTableViewCell.xib */,
+			);
+			path = SearchResultCell;
+			sourceTree = "<group>";
+		};
+		D6D3F69E260742F5008C5DBA /* SearchCell */ = {
+			isa = PBXGroup;
+			children = (
+				CC5E534E2604A0BA00619C1A /* SearchTableViewCell.swift */,
+				CC5E534F2604A0BA00619C1A /* SearchTableViewCell.xib */,
+			);
+			path = SearchCell;
+			sourceTree = "<group>";
+		};
+		D6D3F6A726074F8D008C5DBA /* AppDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppDetailCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +227,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC5E52D42604315500619C1A /* Build configuration list for PBXNativeTarget "SearchApp" */;
 			buildPhases = (
+				854BD2565AA27377ABCF9921 /* [CP] Check Pods Manifest.lock */,
 				CC5E52BC2604315400619C1A /* Sources */,
 				CC5E52BD2604315400619C1A /* Frameworks */,
 				CC5E52BE2604315400619C1A /* Resources */,
@@ -200,25 +284,59 @@
 				CC5E52F92604488500619C1A /* SearchResultViewController.xib in Resources */,
 				CC5E53512604A0BA00619C1A /* SearchTableViewCell.xib in Resources */,
 				CC5E52E32604330000619C1A /* SearchViewController.xib in Resources */,
+				D6D3F693260736F6008C5DBA /* SearchResultTableViewCell.xib in Resources */,
 				CC5E52CB2604315400619C1A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		854BD2565AA27377ABCF9921 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SearchApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CC5E52BC2604315400619C1A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC5E53542604A19E00619C1A /* RecentData.swift in Sources */,
+				D6D3F6972607410C008C5DBA /* SearchResultData.swift in Sources */,
+				CC5E53542604A19E00619C1A /* SearchRecentData.swift in Sources */,
 				CC5E52C42604315400619C1A /* AppDelegate.swift in Sources */,
+				D6D3F69B26074224008C5DBA /* SearchTableData.swift in Sources */,
 				CC5E52F22604484600619C1A /* AppDetailViewController.swift in Sources */,
+				D6D3F67F260716C3008C5DBA /* HttpManager.swift in Sources */,
 				CC5E52E22604330000619C1A /* SearchViewController.swift in Sources */,
 				CC5E53592604AA9000619C1A /* StoredData.swift in Sources */,
+				D6D3F67826071664008C5DBA /* SearchResultCodable.swift in Sources */,
 				CC5E52E72604332E00619C1A /* TabBarViewController.swift in Sources */,
+				D6D3F686260720FD008C5DBA /* HttpHeaderParam.swift in Sources */,
 				CC5E52F82604488500619C1A /* SearchResultViewController.swift in Sources */,
 				CC5E52C62604315400619C1A /* SceneDelegate.swift in Sources */,
+				D6D3F692260736F6008C5DBA /* SearchResultTableViewCell.swift in Sources */,
+				D6D3F67C260716B4008C5DBA /* CallHttpApI.swift in Sources */,
+				D6D3F68326072024008C5DBA /* HttpRequestData.swift in Sources */,
 				CC5E53502604A0BA00619C1A /* SearchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +481,7 @@
 		};
 		CC5E52D52604315500619C1A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 656F2D5E246E25305D9B5F3A /* Pods-SearchApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -382,6 +501,7 @@
 		};
 		CC5E52D62604315500619C1A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B36F68059D8F5E9822D27E9 /* Pods-SearchApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

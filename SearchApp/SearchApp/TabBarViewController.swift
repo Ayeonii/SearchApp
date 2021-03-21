@@ -25,9 +25,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     func setTabbarVC () {
         self.searchTabVC = SearchViewController(nibName: "SearchViewController", bundle: nil)
-        
         let navigationWithSearchVC = UINavigationController(rootViewController: searchTabVC!)
-                
         self.viewControllers = [navigationWithSearchVC]
     }
     
@@ -43,7 +41,5 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
         searchTab.image = UIImage(systemName : "search")
         searchTab.title = "검색"
-        
-       
     }
 }
