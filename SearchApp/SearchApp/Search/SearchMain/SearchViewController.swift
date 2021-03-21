@@ -21,7 +21,11 @@ class SearchViewController: UIViewController {
         return isActive && isSearchBarHasText
     }
     
-    private var recentList : [String]? = ["이아연", "카카오뱅크", "테스트 "] //StoredData.shared.getRecentSearchData()
+    private var recentList : [String]? = StoredData.shared.getRecentSearchData() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,25 +74,6 @@ class SearchViewController: UIViewController {
     @objc func profileButtonTapped(sender : Any) {
         
     }
-//
-//    func saveRecentSearchData() {
-//        if !(textField.text!.isEmpty) {
-//
-//            if let text = textField.text, !(text.isEmpty){
-//                if self.recentList == nil {
-//                    self.recentList = dateString]
-//                } else {
-//                    //중복값 제거
-//                    var uniqueList = self.recentList!.filter {$0.keys.first != text}
-//                    uniqueList.append(dateString)
-//                    self.recentList = uniqueList
-//                }
-//                VcStoredData.shared.setRecentSearchData(param: self.recentList)
-//                textFieldDidChange(textField)
-//            }
-//        }
-//    }
-    
 }
 
 extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
@@ -148,9 +133,11 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
             clickedData = data[indexPath.row]
         }
         
-        
+        self.navigationItem.searchController?.searchBar.text = clickedData
         let resultVC = SearchResultViewController(word : clickedData)
         self.navigationController?.pushViewController(resultVC, animated: true)
+        self.saveRecentSearchData(clickedData)
+        
     }
 }
 
@@ -168,6 +155,26 @@ extension SearchViewController : UISearchResultsUpdating, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar : UISearchBar) {
-        print("ddddd")
+        let text = searchBar.text ?? ""
+        
+        self.navigationItem.searchController?.searchBar.text = text
+        let resultVC = SearchResultViewController(word : text)
+        self.navigationController?.pushViewController(resultVC, animated: true)
+        self.saveRecentSearchData(text)
+        
+    }
+    
+    func saveRecentSearchData(_ txt : String) {
+           
+        if self.recentList == nil {
+            self.recentList = [txt]
+            self.filteredData = [txt]
+        } else {
+            //중복값 제거
+            var uniqueList = self.recentList?.filter {$0 != txt}
+            uniqueList!.append(txt)
+            self.recentList = uniqueList
+        }
+        StoredData.shared.setRecentSearchData(param: self.recentList)
     }
 }
