@@ -10,8 +10,10 @@ import UIKit
 class SearchViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var observer: NSKeyValueObservation?
     var filteredData : [String]?
+    var searchController : UISearchController?
+    let profileButton = UIButton()
     
     var isSearchingActivate : Bool {
         let searchController = self.navigationItem.searchController
@@ -41,23 +43,23 @@ class SearchViewController: UIViewController {
     }
     
     func setupNavigation() {
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
+        searchController = UISearchController(searchResultsController: nil)
+        searchController?.searchResultsUpdater = self
+        searchController?.searchBar.delegate = self
         
         let navBar = self.navigationController?.navigationBar
         
-        searchController.searchBar.placeholder = "게임, 앱, 스토리 등"
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
+        searchController?.searchBar.placeholder = "게임, 앱, 스토리 등"
+        searchController?.hidesNavigationBarDuringPresentation = false
+        searchController?.obscuresBackgroundDuringPresentation = false
+        searchController?.searchBar.setValue("취소", forKey: "cancelButtonText")
         
         navBar?.prefersLargeTitles = true
         navigationItem.title = "검색"
         navigationItem.hidesSearchBarWhenScrolling = false
-        navigationItem.searchController = searchController
+        navigationItem.searchController = searchController!
         
-        let profileButton = UIButton()
+        
         profileButton.setBackgroundImage(UIImage(named: "earth_icon"), for: .normal)
         profileButton.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
         navBar?.addSubview(profileButton)
@@ -65,15 +67,31 @@ class SearchViewController: UIViewController {
         
         var constraints: [NSLayoutConstraint] = []
         constraints.append(NSLayoutConstraint(item: profileButton, attribute: .trailingMargin, relatedBy: .equal, toItem: navBar, attribute: .trailingMargin, multiplier: 1.0, constant: -16))
-        constraints.append(NSLayoutConstraint(item: profileButton, attribute: .bottom, relatedBy: .equal, toItem: navBar, attribute: .bottom, multiplier: 1.0, constant: -searchController.searchBar.frame.height - 6))
+        constraints.append(NSLayoutConstraint(item: profileButton, attribute: .bottom, relatedBy: .equal, toItem: navBar, attribute: .bottom, multiplier: 1.0, constant: -searchController!.searchBar.frame.height - 6))
         
         profileButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(constraints)
+        
     }
+
     
     @objc func profileButtonTapped(sender : Any) {
         
     }
+    
+    func saveRecentSearchData(_ txt : String) {
+           
+        if self.recentList == nil {
+            self.recentList = [txt]
+            self.filteredData = [txt]
+        } else {
+            var uniqueList = self.recentList?.filter {$0 != txt}
+            uniqueList!.append(txt)
+            self.recentList = uniqueList
+        }
+        StoredData.shared.setRecentSearchData(param: self.recentList)
+    }
+    
 }
 
 extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
@@ -161,20 +179,10 @@ extension SearchViewController : UISearchResultsUpdating, UISearchBarDelegate {
         let resultVC = SearchResultViewController(word : text)
         self.navigationController?.pushViewController(resultVC, animated: true)
         self.saveRecentSearchData(text)
-        
     }
     
-    func saveRecentSearchData(_ txt : String) {
-           
-        if self.recentList == nil {
-            self.recentList = [txt]
-            self.filteredData = [txt]
-        } else {
-            //중복값 제거
-            var uniqueList = self.recentList?.filter {$0 != txt}
-            uniqueList!.append(txt)
-            self.recentList = uniqueList
-        }
-        StoredData.shared.setRecentSearchData(param: self.recentList)
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        self.searchController?.hidesNavigationBarDuringPresentation = true
+        return true
     }
 }

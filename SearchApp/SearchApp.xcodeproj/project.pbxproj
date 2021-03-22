@@ -22,8 +22,9 @@
 		CC5E52F92604488500619C1A /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5E52F72604488500619C1A /* SearchResultViewController.xib */; };
 		CC5E53502604A0BA00619C1A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E534E2604A0BA00619C1A /* SearchTableViewCell.swift */; };
 		CC5E53512604A0BA00619C1A /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5E534F2604A0BA00619C1A /* SearchTableViewCell.xib */; };
-		CC5E53542604A19E00619C1A /* SearchRecentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E53532604A19E00619C1A /* SearchRecentData.swift */; };
 		CC5E53592604AA9000619C1A /* StoredData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E53582604AA9000619C1A /* StoredData.swift */; };
+		CC8F4F70260828B6003FFB49 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8F4F6F260828B6003FFB49 /* ImageCache.swift */; };
+		CC8F4F74260828FD003FFB49 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8F4F73260828FD003FFB49 /* UIImageViewExtension.swift */; };
 		D6D3F67826071664008C5DBA /* SearchResultCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F67726071664008C5DBA /* SearchResultCodable.swift */; };
 		D6D3F67C260716B4008C5DBA /* CallHttpApI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F67B260716B4008C5DBA /* CallHttpApI.swift */; };
 		D6D3F67F260716C3008C5DBA /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F67E260716C3008C5DBA /* HttpManager.swift */; };
@@ -55,8 +56,9 @@
 		CC5E52F72604488500619C1A /* SearchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
 		CC5E534E2604A0BA00619C1A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		CC5E534F2604A0BA00619C1A /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
-		CC5E53532604A19E00619C1A /* SearchRecentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecentData.swift; sourceTree = "<group>"; };
 		CC5E53582604AA9000619C1A /* StoredData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredData.swift; sourceTree = "<group>"; };
+		CC8F4F6F260828B6003FFB49 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		CC8F4F73260828FD003FFB49 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		D6D3F67726071664008C5DBA /* SearchResultCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCodable.swift; sourceTree = "<group>"; };
 		D6D3F67B260716B4008C5DBA /* CallHttpApI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHttpApI.swift; sourceTree = "<group>"; };
 		D6D3F67E260716C3008C5DBA /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		CC5E52C22604315400619C1A /* SearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				CC8F4F72260828EF003FFB49 /* Extension */,
 				D6D3F67A260716A0008C5DBA /* Http */,
 				CC5E53572604AA8000619C1A /* Config */,
 				CC5E52DF260432E300619C1A /* Search */,
@@ -145,7 +148,6 @@
 		CC5E52EC260447F900619C1A /* SearchMain */ = {
 			isa = PBXGroup;
 			children = (
-				CC5E53532604A19E00619C1A /* SearchRecentData.swift */,
 				CC5E52E02604330000619C1A /* SearchViewController.swift */,
 				CC5E52E12604330000619C1A /* SearchViewController.xib */,
 				D6D3F69E260742F5008C5DBA /* SearchCell */,
@@ -156,11 +158,10 @@
 		CC5E52ED2604480700619C1A /* SearchResult */ = {
 			isa = PBXGroup;
 			children = (
-				D6D3F67726071664008C5DBA /* SearchResultCodable.swift */,
-				D6D3F6962607410C008C5DBA /* SearchResultData.swift */,
 				CC5E52F62604488500619C1A /* SearchResultViewController.swift */,
 				CC5E52F72604488500619C1A /* SearchResultViewController.xib */,
 				D6D3F68F260736CA008C5DBA /* SearchResultCell */,
+				CC8F4F7626082FAB003FFB49 /* Data */,
 			);
 			path = SearchResult;
 			sourceTree = "<group>";
@@ -179,8 +180,27 @@
 			isa = PBXGroup;
 			children = (
 				CC5E53582604AA9000619C1A /* StoredData.swift */,
+				CC8F4F6F260828B6003FFB49 /* ImageCache.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		CC8F4F72260828EF003FFB49 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CC8F4F73260828FD003FFB49 /* UIImageViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CC8F4F7626082FAB003FFB49 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D6D3F67726071664008C5DBA /* SearchResultCodable.swift */,
+				D6D3F6962607410C008C5DBA /* SearchResultData.swift */,
+				D6D3F69A26074224008C5DBA /* SearchTableData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		D6D3F67A260716A0008C5DBA /* Http */ = {
@@ -197,7 +217,6 @@
 		D6D3F68F260736CA008C5DBA /* SearchResultCell */ = {
 			isa = PBXGroup;
 			children = (
-				D6D3F69A26074224008C5DBA /* SearchTableData.swift */,
 				D6D3F690260736F6008C5DBA /* SearchResultTableViewCell.swift */,
 				D6D3F691260736F6008C5DBA /* SearchResultTableViewCell.xib */,
 			);
@@ -322,8 +341,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6D3F6972607410C008C5DBA /* SearchResultData.swift in Sources */,
-				CC5E53542604A19E00619C1A /* SearchRecentData.swift in Sources */,
 				CC5E52C42604315400619C1A /* AppDelegate.swift in Sources */,
+				CC8F4F74260828FD003FFB49 /* UIImageViewExtension.swift in Sources */,
 				D6D3F69B26074224008C5DBA /* SearchTableData.swift in Sources */,
 				CC5E52F22604484600619C1A /* AppDetailViewController.swift in Sources */,
 				D6D3F67F260716C3008C5DBA /* HttpManager.swift in Sources */,
@@ -333,6 +352,7 @@
 				CC5E52E72604332E00619C1A /* TabBarViewController.swift in Sources */,
 				D6D3F686260720FD008C5DBA /* HttpHeaderParam.swift in Sources */,
 				CC5E52F82604488500619C1A /* SearchResultViewController.swift in Sources */,
+				CC8F4F70260828B6003FFB49 /* ImageCache.swift in Sources */,
 				CC5E52C62604315400619C1A /* SceneDelegate.swift in Sources */,
 				D6D3F692260736F6008C5DBA /* SearchResultTableViewCell.swift in Sources */,
 				D6D3F67C260716B4008C5DBA /* CallHttpApI.swift in Sources */,

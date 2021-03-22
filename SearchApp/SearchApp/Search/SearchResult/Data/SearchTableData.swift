@@ -68,7 +68,6 @@ class AppListDataConvertor {
                 return oneData
             }
         }
-        
         return appData
     }
 }

@@ -29,14 +29,14 @@ class SearchResultTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        iconImage.image = UIImage(named : "")
+        iconImage.image = UIImage()
         appName.text = ""
         appDesc.text = ""
         
         ratingLabel.text = ""
-        screenShot1.image = UIImage(named : "")
-        screenShot2.image = UIImage(named : "")
-        screenShot3.image = UIImage(named : "")
+        screenShot1.image = UIImage()
+        screenShot2.image = UIImage()
+        screenShot3.image = UIImage()
         
     }
     
@@ -45,37 +45,13 @@ class SearchResultTableViewCell: UITableViewCell {
         
         self.appName.text = cellData.appName
         self.appDesc.text = cellData.appDesc
-
         
-        let iconUrl = URL(string: cellData.iconImage)
-        let screenShot1Url = URL(string : cellData.screenShot1 ?? "")
-        let screenShot2Url = URL(string : cellData.screenShot2 ?? "")
-        let screenShot3Url = URL(string : cellData.screenShot3 ?? "")
         
-        DispatchQueue.global().async {
-            do {
-                let iconData = try? Data(contentsOf: iconUrl!)
-                let screen1Data = try? Data(contentsOf: screenShot1Url!)
-                let screen2Data = try? Data(contentsOf: screenShot2Url!)
-                let screen3Data = try? Data(contentsOf: screenShot3Url!)
-                
-                DispatchQueue.main.async { [self] in
-                    if let data = iconData {
-                        iconImage.image = UIImage(data: data)
-                    }
-                    if let data = screen1Data {
-                        screenShot1.image = UIImage(data: data)
-                    }
-                    if let data = screen2Data {
-                        screenShot2.image = UIImage(data: data)
-                    }
-                    if let data = screen3Data {
-                        screenShot3.image = UIImage(data: data)
-                    }
-                }
-            } catch {
-               print(error)
-            }
-        }
+        
+        self.iconImage.setImageUrl(cellData.iconImage)
+        self.screenShot1.setImageUrl(cellData.screenShot1 ?? "")
+        self.screenShot2.setImageUrl(cellData.screenShot2 ?? "")
+        self.screenShot3.setImageUrl(cellData.screenShot3 ?? "")
+         
     }
 }
