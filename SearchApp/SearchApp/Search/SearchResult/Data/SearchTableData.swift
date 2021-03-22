@@ -12,6 +12,7 @@ struct AppListData {
     var appName : String
     var appDesc : String
     var rating : Double?
+    var commentRating : Int
     
     var screenShot1 : String?
     var screenShot2 : String?
@@ -22,22 +23,13 @@ struct AppListData {
         appName = ""
         appDesc = ""
         rating = nil
+        commentRating = 0
         
         screenShot1 = nil
         screenShot2 = nil
         screenShot3 = nil
     }
-    
-//    init(icon : String, appName : String, appDesc : String, rating : Double?, screenShot1 : String?, screenShot2 : String?, screenShot3 : String) {
-//        self.iconImage = icon
-//        self.appName = appName
-//        self.appDesc = appDesc
-//        self.rating  = rating
-//
-//        self.screenShot1 = screenShot1
-//        self.screenShot2 = screenShot2
-//        self.screenShot3 = screenShot3
-//    }
+
 }
 
 
@@ -58,6 +50,7 @@ class AppListDataConvertor {
                 oneData.appName = $0.trackName ?? ""
                 oneData.appDesc = ""
                 oneData.rating = $0.averageUserRating ?? 0.0
+                oneData.commentRating = $0.userRatingCount ?? 0
                 
                 if let urls = $0.screenshotUrls, urls.count > 0 {
                     oneData.screenShot1 = urls.count >= 1 ? urls[0] : nil

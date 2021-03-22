@@ -24,7 +24,6 @@ class SearchResultTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     override func prepareForReuse() {
@@ -45,8 +44,7 @@ class SearchResultTableViewCell: UITableViewCell {
         
         self.appName.text = cellData.appName
         self.appDesc.text = cellData.appDesc
-        
-        
+        self.ratingLabel.text = String(cellData.commentRating)
         
         self.iconImage.setImageUrl(cellData.iconImage)
         self.screenShot1.setImageUrl(cellData.screenShot1 ?? "")
