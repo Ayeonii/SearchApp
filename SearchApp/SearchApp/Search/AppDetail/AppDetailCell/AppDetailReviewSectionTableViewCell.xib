@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="223" id="KGk-i7-Jjw" customClass="AppDetailReviewSectionTableViewCell" customModule="SearchApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="437" height="223"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="437" height="223"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탭하여 평가하기:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hh0-po-ONW">
+                        <rect key="frame" x="16" y="10" width="112" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5w9-Dh-h4F">
+                        <rect key="frame" x="0.0" y="41" width="437" height="136"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="35p-Tl-jLh">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUc-C7-6Zf">
+                        <rect key="frame" x="16" y="187" width="77" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <state key="normal" title=" 리뷰작성" image="square.and.pencil" catalog="system">
+                            <color key="titleColor" name="AccentColor"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAg-c2-cEQ">
+                        <rect key="frame" x="354" y="188" width="67" height="19"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <state key="normal" title=" 앱 지원" image="questionmark.circle" catalog="system">
+                            <color key="titleColor" name="AccentColor"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5w9-Dh-h4F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="2wt-2D-dkS"/>
+                    <constraint firstItem="5w9-Dh-h4F" firstAttribute="top" secondItem="hh0-po-ONW" secondAttribute="bottom" constant="10" id="6ts-6f-O2u"/>
+                    <constraint firstItem="hh0-po-ONW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="8Ki-Ch-XXt"/>
+                    <constraint firstItem="hh0-po-ONW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="RRr-xR-UbC"/>
+                    <constraint firstItem="RUc-C7-6Zf" firstAttribute="top" secondItem="5w9-Dh-h4F" secondAttribute="bottom" constant="10" id="S9L-vf-tGE"/>
+                    <constraint firstItem="RUc-C7-6Zf" firstAttribute="leading" secondItem="hh0-po-ONW" secondAttribute="leading" id="dbb-pj-4IC"/>
+                    <constraint firstAttribute="trailing" secondItem="sAg-c2-cEQ" secondAttribute="trailing" constant="16" id="iU0-Tt-sQq"/>
+                    <constraint firstItem="sAg-c2-cEQ" firstAttribute="bottom" secondItem="RUc-C7-6Zf" secondAttribute="bottom" id="m7u-rQ-q2i"/>
+                    <constraint firstAttribute="trailing" secondItem="5w9-Dh-h4F" secondAttribute="trailing" id="p8L-3D-BPX"/>
+                    <constraint firstAttribute="bottom" secondItem="RUc-C7-6Zf" secondAttribute="bottom" constant="16" id="uAy-Nc-PXL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="135.50724637681159" y="169.75446428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="questionmark.circle" catalog="system" width="128" height="121"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

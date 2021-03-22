@@ -50,7 +50,7 @@ class AppListDataConvertor {
                 oneData.appName = $0.trackName ?? ""
                 oneData.appDesc = ""
                 oneData.rating = $0.averageUserRating ?? 0.0
-                oneData.commentRating = $0.userRatingCount ?? 0
+                oneData.commentRating = $0.userRatingCountForCurrentVersion ?? 0
                 
                 if let urls = $0.screenshotUrls, urls.count > 0 {
                     oneData.screenShot1 = urls.count >= 1 ? urls[0] : nil

@@ -43,7 +43,7 @@ struct SearchResults : Codable {
     let formattedPrice : String?
     let contentAdvisoryRating : String?
     let averageUserRatingForCurrentVersion : Double?
-    let userRatingCountForCurrentVersion : Double?
+    let userRatingCountForCurrentVersion : Int?
     let averageUserRating : Double?
     let trackViewUrl : String?
     let trackContentRating : String?
@@ -138,7 +138,7 @@ struct SearchResults : Codable {
         formattedPrice = try values.decodeIfPresent(String.self, forKey: .formattedPrice)
         contentAdvisoryRating = try values.decodeIfPresent(String.self, forKey: .contentAdvisoryRating)
         averageUserRatingForCurrentVersion = try values.decodeIfPresent(Double.self, forKey: .averageUserRatingForCurrentVersion)
-        userRatingCountForCurrentVersion = try values.decodeIfPresent(Double.self, forKey: .userRatingCountForCurrentVersion)
+        userRatingCountForCurrentVersion = try values.decodeIfPresent(Int.self, forKey: .userRatingCountForCurrentVersion)
         averageUserRating = try values.decodeIfPresent(Double.self, forKey: .averageUserRating)
         trackViewUrl = try values.decodeIfPresent(String.self, forKey: .trackViewUrl)
         trackContentRating = try values.decodeIfPresent(String.self, forKey: .trackContentRating)

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="156" id="KGk-i7-Jjw" customClass="AppDetailReviewTableViewCell" customModule="SearchApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="412" height="153"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="412" height="153"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평가 및 리뷰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmg-mw-S0M">
+                        <rect key="frame" x="16" y="10" width="114" height="29"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWw-Nd-0Rx">
+                        <rect key="frame" x="329" y="13" width="67" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="g9Q-qI-0Bx"/>
+                            <constraint firstAttribute="width" constant="67" id="u5i-T7-OsA"/>
+                        </constraints>
+                        <state key="normal" title="모두보기"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2T-YT-FGk">
+                        <rect key="frame" x="16" y="59" width="114" height="60"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(최고 5점)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V02-pW-Onk">
+                        <rect key="frame" x="16" y="122" width="114" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label개의 평가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfL-3j-Llm">
+                        <rect key="frame" x="291.5" y="122" width="104.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pl0-z3-teG">
+                        <rect key="frame" x="140" y="59" width="256" height="60"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gWw-Nd-0Rx" firstAttribute="bottom" secondItem="Fmg-mw-S0M" secondAttribute="bottom" id="1Dp-Ec-NaJ"/>
+                    <constraint firstItem="gWw-Nd-0Rx" firstAttribute="trailing" secondItem="Pl0-z3-teG" secondAttribute="trailing" id="3k1-OW-Ge4"/>
+                    <constraint firstItem="JfL-3j-Llm" firstAttribute="bottom" secondItem="V02-pW-Onk" secondAttribute="bottom" id="79x-LM-ubp"/>
+                    <constraint firstItem="J2T-YT-FGk" firstAttribute="leading" secondItem="Fmg-mw-S0M" secondAttribute="leading" id="8AU-GW-ldN"/>
+                    <constraint firstItem="J2T-YT-FGk" firstAttribute="trailing" secondItem="Fmg-mw-S0M" secondAttribute="trailing" id="BXF-N9-V4C"/>
+                    <constraint firstItem="V02-pW-Onk" firstAttribute="top" secondItem="J2T-YT-FGk" secondAttribute="bottom" constant="3" id="IxT-Le-r2C"/>
+                    <constraint firstItem="JfL-3j-Llm" firstAttribute="trailing" secondItem="Pl0-z3-teG" secondAttribute="trailing" id="J6V-H4-nmT"/>
+                    <constraint firstItem="JfL-3j-Llm" firstAttribute="trailing" secondItem="Pl0-z3-teG" secondAttribute="trailing" id="KdY-pf-kCK"/>
+                    <constraint firstItem="Fmg-mw-S0M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="OGN-yi-PeB"/>
+                    <constraint firstItem="V02-pW-Onk" firstAttribute="trailing" secondItem="J2T-YT-FGk" secondAttribute="trailing" id="Q3T-Ww-Bsr"/>
+                    <constraint firstItem="Fmg-mw-S0M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="URV-Cm-YLg"/>
+                    <constraint firstItem="V02-pW-Onk" firstAttribute="leading" secondItem="J2T-YT-FGk" secondAttribute="leading" id="Wex-gd-EYB"/>
+                    <constraint firstItem="J2T-YT-FGk" firstAttribute="top" secondItem="Fmg-mw-S0M" secondAttribute="bottom" constant="20" id="fAb-Ex-vzF"/>
+                    <constraint firstItem="Pl0-z3-teG" firstAttribute="bottom" secondItem="J2T-YT-FGk" secondAttribute="bottom" id="iCT-Zd-O3L"/>
+                    <constraint firstItem="Pl0-z3-teG" firstAttribute="leading" secondItem="J2T-YT-FGk" secondAttribute="trailing" constant="10" id="iK2-Ge-WZm"/>
+                    <constraint firstAttribute="bottom" secondItem="V02-pW-Onk" secondAttribute="bottom" constant="10" id="kJd-9s-72j"/>
+                    <constraint firstAttribute="trailing" secondItem="JfL-3j-Llm" secondAttribute="trailing" constant="16" id="qPE-IE-U01"/>
+                    <constraint firstItem="Pl0-z3-teG" firstAttribute="top" secondItem="J2T-YT-FGk" secondAttribute="top" id="tXC-ax-k5o"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="172.46376811594203" y="148.32589285714286"/>
+        </tableViewCell>
+    </objects>
+</document>

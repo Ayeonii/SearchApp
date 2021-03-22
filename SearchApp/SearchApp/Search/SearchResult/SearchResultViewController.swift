@@ -12,7 +12,7 @@ class SearchResultViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let searchWord : String
     
-    var rowNum = 0
+    var rowNum = 1
     var listData : [AppListData]?
     
     init(word : String) {
@@ -28,6 +28,7 @@ class SearchResultViewController: UIViewController {
         super.loadView()
         
         let req = SearchRequestParams(searchTerm: searchWord, entity: "software")
+        
         CallHttpAPI.callSearchApi(req){ result in
             if let res = result {
                 self.rowNum = res.resultCount ?? 0
@@ -42,6 +43,7 @@ class SearchResultViewController: UIViewController {
       
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "SearchResultTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchResultTableViewCell")
     }
     
@@ -64,7 +66,7 @@ extension SearchResultViewController : UITableViewDelegate, UITableViewDataSourc
             if let data = self.listData {
                 cell.updateCellWithData(data[indexPath.row])
             }
-        
+            cell.selectionStyle = .none
             return cell
         }
         return UITableViewCell()
