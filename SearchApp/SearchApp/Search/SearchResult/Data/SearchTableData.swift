@@ -60,9 +60,9 @@ class AppListDataConvertor {
                 oneData.rating = $0.averageUserRating ?? 0.0
                 
                 if let urls = $0.screenshotUrls, urls.count > 0 {
-                    oneData.screenShot1 = urls[0]
-                    oneData.screenShot2 = urls[1]
-                    oneData.screenShot3 = urls[2]
+                    oneData.screenShot1 = urls.count >= 1 ? urls[0] : nil
+                    oneData.screenShot2 = urls.count >= 2 ? urls[1] : nil
+                    oneData.screenShot3 = urls.count >= 3 ? urls[2] : nil
                 }
                 
                 return oneData
