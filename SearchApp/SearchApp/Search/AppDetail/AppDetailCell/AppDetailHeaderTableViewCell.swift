@@ -7,6 +7,12 @@
 
 import UIKit
 
+struct AppDetailHeaderData {
+    let iconImage : String
+    let appName : String
+    let appDesc : String
+}
+
 class AppDetailHeaderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var iconImage: UIImageView!
@@ -18,6 +24,11 @@ class AppDetailHeaderTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+    }
+    
+    func updateCellWithData(data : AppDetailHeaderData) {
+        self.iconImage.setImageUrl(data.iconImage)
+        self.appName.text = data.appName
+        self.appSubName.text = data.appDesc
     }
 }

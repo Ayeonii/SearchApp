@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="lu8-WF-ai5">
-                        <rect key="frame" x="16" y="92" width="470" height="271"/>
+                        <rect key="frame" x="16" y="163" width="470" height="271"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Mv-3G-tvr">
                                 <rect key="frame" x="0.0" y="0.0" width="152.5" height="271"/>
@@ -43,17 +43,17 @@
                         </constraints>
                     </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymu-da-yIP">
-                        <rect key="frame" x="0.0" y="0.0" width="502" height="92"/>
+                        <rect key="frame" x="0.0" y="0.0" width="502" height="163"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fmN-bD-1RX">
-                                <rect key="frame" x="16" y="16" width="60" height="60"/>
+                                <rect key="frame" x="16" y="51.5" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fmN-bD-1RX" secondAttribute="height" multiplier="1:1" id="Auc-3b-hzD"/>
                                     <constraint firstAttribute="width" constant="60" id="sUf-sf-Ggs"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVH-95-XQY">
-                                <rect key="frame" x="86" y="16" width="315" height="60"/>
+                                <rect key="frame" x="86" y="51.5" width="315" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공인인증서 필요없는 모바일은행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dje-BF-XnS">
                                         <rect key="frame" x="2" y="22" width="311" height="16"/>
@@ -139,7 +139,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1a-Bj-Ir2">
-                                <rect key="frame" x="416" y="31.5" width="70" height="29"/>
+                                <rect key="frame" x="416" y="67" width="70" height="29"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="aJM-Eg-a2f"/>
@@ -151,12 +151,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fmN-bD-1RX" firstAttribute="leading" secondItem="ymu-da-yIP" secondAttribute="leading" constant="16" id="9Ka-qc-MXE"/>
-                            <constraint firstItem="fmN-bD-1RX" firstAttribute="top" secondItem="ymu-da-yIP" secondAttribute="top" constant="16" id="CNz-eL-ygL"/>
                             <constraint firstItem="uVH-95-XQY" firstAttribute="bottom" secondItem="fmN-bD-1RX" secondAttribute="bottom" id="EDJ-TU-o9I"/>
                             <constraint firstItem="Y1a-Bj-Ir2" firstAttribute="centerY" secondItem="ymu-da-yIP" secondAttribute="centerY" id="GXV-RP-lEp"/>
                             <constraint firstItem="fmN-bD-1RX" firstAttribute="centerY" secondItem="ymu-da-yIP" secondAttribute="centerY" id="hXO-hC-dLS"/>
                             <constraint firstItem="Y1a-Bj-Ir2" firstAttribute="leading" secondItem="uVH-95-XQY" secondAttribute="trailing" constant="15" id="ifT-ZV-HyN"/>
-                            <constraint firstAttribute="bottom" secondItem="fmN-bD-1RX" secondAttribute="bottom" constant="16" id="nZN-Q4-r6g"/>
                             <constraint firstItem="uVH-95-XQY" firstAttribute="top" secondItem="fmN-bD-1RX" secondAttribute="top" id="sg6-Et-0UO"/>
                             <constraint firstAttribute="trailing" secondItem="Y1a-Bj-Ir2" secondAttribute="trailing" constant="16" id="urQ-YX-aNY"/>
                             <constraint firstItem="uVH-95-XQY" firstAttribute="leading" secondItem="fmN-bD-1RX" secondAttribute="trailing" constant="10" id="vRt-8Y-uX7"/>

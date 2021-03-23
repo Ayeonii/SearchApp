@@ -10,13 +10,31 @@ import UIKit
 class AppDetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    let id : Int
+    
+    init(id : Int) {
+        self.id = id
+        super.init(nibName: "SearchResultViewController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        let req = SearchAnAppRequestParams(id : self.id)
+        CallHttpAPI.callSearchApiApapp(req){ res in
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
-        
     }
+    
 }
 
 extension AppDetailViewController : UITableViewDelegate, UITableViewDataSource {
@@ -33,6 +51,5 @@ extension AppDetailViewController : UITableViewDelegate, UITableViewDataSource {
         
         return UITableViewCell()
     }
-    
-    
+
 }

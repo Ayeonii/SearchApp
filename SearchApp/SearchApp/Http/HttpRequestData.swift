@@ -12,11 +12,18 @@ struct SearchRequestParams: Encodable {
     var term : String? = ""
     var entity : String? = "software"
     var country : String?
-    var limit : Int?
-    
-    init(searchTerm : String, entity : String, country : String? = "KR", pagin ) {
+
+    init(searchTerm : String, entity : String, country : String? = "KR" ) {
         self.term = searchTerm
         self.entity = entity
         self.country = country ?? "KR"
+    }
+}
+
+struct SearchAnAppRequestParams: Encodable {
+    var id : Int
+    
+    init(id : Int) {
+        self.id = id
     }
 }
