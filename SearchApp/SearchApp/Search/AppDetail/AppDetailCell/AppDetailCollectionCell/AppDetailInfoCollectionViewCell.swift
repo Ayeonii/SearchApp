@@ -7,12 +7,6 @@
 
 import UIKit
 
-struct AppDetailInfoData {
-    let title : String
-    let content : String
-    let prefix : String
-}
-
 class AppDetailInfoCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var title: UILabel!

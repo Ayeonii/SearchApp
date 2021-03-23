@@ -7,17 +7,21 @@
 
 import UIKit
 
+
+
 class AppDetailReviewTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var reviewRating: UILabel!
+    @IBOutlet weak var numberOfReviewLabel: UILabel!
+    @IBOutlet weak var showAllBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func updateCellWithData(data :  AppDetailReviewData) {
+        self.reviewRating.text = "\(data.rating)"
+        self.numberOfReviewLabel.text = "\(data.userReviewCount)개의 평가"
     }
-    
 }

@@ -38,4 +38,11 @@ extension UIImageView {
             }.resume()
         }
     }
+    
+    func makeRadiusAndAspectFill() {
+        self.layer.cornerRadius = 13
+        self.layer.borderWidth = 0.2
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.contentMode = .scaleAspectFill
+    }
 }

@@ -11,15 +11,31 @@ class AppDetailScreenShotTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var supportDevices: UILabel!
+    
+    var screenShotUrls : [String]?
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.collectionView.register(UINib(nibName: "AppDetailScreenshotCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AppDetailScreenshotCollectionViewCell")
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    func updateCellWithData(_ data : [String]) {
+        self.screenShotUrls = data
+    }
+}
 
-        // Configure the view for the selected state
+extension AppDetailScreenShotTableViewCell : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return screenShotUrls?.count ?? 0
     }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppDetailScreenshotCollectionViewCell", for: indexPath) as? AppDetailScreenshotCollectionViewCell {
+            
+            return cell
+        }
+        return UICollectionViewCell()
+    }
 }
+

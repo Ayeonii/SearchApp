@@ -8,21 +8,38 @@
 import Foundation
 
 struct AppDetailData {
-    var iconImage : String
-    var appName : String
-    var appDesc : String
-    var rating : Double?
-    var commentRating : Int
+    var headerData : AppDetailHeaderData?
+    var infoData : AppDetailInfoData?
+    var versionData : AppDetailVersionContentsData?
+    var promotionData : AppDetailPromotionData?
+    var reviewData : [AppDetailReviewData]?
+}
+
+struct AppDetailHeaderData {
+    var iconImage : String?
+    var appName : String?
+    var appDesc : String?
     
-    var screenShot : [String]
-    
-    init(){
-        iconImage = ""
-        appName = ""
-        appDesc = ""
-        rating = nil
-        commentRating = 0
-        
-        screenShot = []
-    }
+}
+
+struct AppDetailInfoData {
+    var title : String
+    var content : String
+    var prefix : String
+}
+
+struct AppDetailVersionContentsData {
+    var version : String
+    var newDescription : String
+    var lastDate : String
+}
+
+struct AppDetailPromotionData {
+    var descriptionLabel : String
+    var lastLabel : String
+}
+
+struct AppDetailReviewData {
+    var rating : Double
+    var userReviewCount : Int
 }

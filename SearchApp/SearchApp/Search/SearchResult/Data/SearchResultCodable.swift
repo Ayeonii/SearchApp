@@ -37,6 +37,7 @@ struct SearchResults : Codable {
     let kind : String?
     let minimumOsVersion : String?
     let trackCensoredName : String?
+    
     let languageCodesISO2A : [String]?
     let fileSizeBytes : String?
     let sellerUrl : String?

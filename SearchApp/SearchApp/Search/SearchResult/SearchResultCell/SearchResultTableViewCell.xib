@@ -46,32 +46,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="502" height="163"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fmN-bD-1RX">
-                                <rect key="frame" x="16" y="51.5" width="60" height="60"/>
+                                <rect key="frame" x="16" y="16" width="131" height="131"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fmN-bD-1RX" secondAttribute="height" multiplier="1:1" id="Auc-3b-hzD"/>
-                                    <constraint firstAttribute="width" constant="60" id="sUf-sf-Ggs"/>
+                                    <constraint firstAttribute="height" priority="999" constant="60" id="wCh-gM-cgc"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVH-95-XQY">
-                                <rect key="frame" x="86" y="51.5" width="315" height="60"/>
+                                <rect key="frame" x="157" y="16" width="244" height="131"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공인인증서 필요없는 모바일은행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dje-BF-XnS">
-                                        <rect key="frame" x="2" y="22" width="311" height="16"/>
+                                        <rect key="frame" x="2" y="57.5" width="240" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오뱅크 - 같지만 다른 은행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNS-eK-52E">
-                                        <rect key="frame" x="2" y="0.0" width="311" height="19.5"/>
+                                        <rect key="frame" x="2" y="0.0" width="240" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xl5-NH-FSl">
-                                        <rect key="frame" x="2" y="45" width="311" height="15"/>
+                                        <rect key="frame" x="2" y="115" width="240" height="16"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rL7-xD-I99" customClass="CosmosView" customModule="Cosmos">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="15"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="16"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="starSize">
@@ -108,7 +108,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZr-7L-LQs">
-                                                <rect key="frame" x="80" y="0.0" width="31" height="15"/>
+                                                <rect key="frame" x="80" y="0.0" width="31" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" systemColor="systemGray4Color"/>
                                                 <nil key="highlightedColor"/>
@@ -116,6 +116,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="14U-qd-9Ek"/>
                                             <constraint firstAttribute="bottom" secondItem="rL7-xD-I99" secondAttribute="bottom" id="Qai-FH-eDY"/>
                                             <constraint firstItem="BZr-7L-LQs" firstAttribute="leading" secondItem="rL7-xD-I99" secondAttribute="trailing" constant="5" id="dWQ-9f-3TV"/>
                                             <constraint firstItem="rL7-xD-I99" firstAttribute="leading" secondItem="xl5-NH-FSl" secondAttribute="leading" id="oXc-sZ-tZj"/>
@@ -150,6 +151,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="uVH-95-XQY" firstAttribute="top" secondItem="ymu-da-yIP" secondAttribute="top" constant="16" id="4Iv-9U-bJE"/>
+                            <constraint firstAttribute="bottom" secondItem="uVH-95-XQY" secondAttribute="bottom" constant="16" id="4RN-iC-Ri2"/>
                             <constraint firstItem="fmN-bD-1RX" firstAttribute="leading" secondItem="ymu-da-yIP" secondAttribute="leading" constant="16" id="9Ka-qc-MXE"/>
                             <constraint firstItem="uVH-95-XQY" firstAttribute="bottom" secondItem="fmN-bD-1RX" secondAttribute="bottom" id="EDJ-TU-o9I"/>
                             <constraint firstItem="Y1a-Bj-Ir2" firstAttribute="centerY" secondItem="ymu-da-yIP" secondAttribute="centerY" id="GXV-RP-lEp"/>

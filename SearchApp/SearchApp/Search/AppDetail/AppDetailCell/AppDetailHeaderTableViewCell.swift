@@ -7,11 +7,6 @@
 
 import UIKit
 
-struct AppDetailHeaderData {
-    let iconImage : String
-    let appName : String
-    let appDesc : String
-}
 
 class AppDetailHeaderTableViewCell: UITableViewCell {
 

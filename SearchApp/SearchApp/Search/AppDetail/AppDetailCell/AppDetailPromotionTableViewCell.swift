@@ -7,17 +7,24 @@
 
 import UIKit
 
+
 class AppDetailPromotionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var lastLabel: UILabel!
+    @IBOutlet weak var lastLabelView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func updateCellWithData(data : String) {
+        self.descriptionLabel.text = data
+        
+        //2줄 초과일 때, 2줄만 노출하고 나머지 초과된 줄중 3번째 줄을 lastLabel에 노출시킨다.
+        
     }
+    
     
 }

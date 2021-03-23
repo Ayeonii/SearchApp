@@ -7,12 +7,6 @@
 
 import UIKit
 
-struct AppDetailVersionContentsData {
-    var version : String
-    var newDescription : String
-    var lastDate : String
-}
-
 class AppDetailVersionContentsTableViewCell: UITableViewCell {
 
     var data : AppDetailVersionContentsData?

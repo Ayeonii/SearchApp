@@ -75,6 +75,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="numberOfReviewLabel" destination="JfL-3j-Llm" id="vCC-kj-4tl"/>
+                <outlet property="reviewRating" destination="J2T-YT-FGk" id="Xxm-xg-szD"/>
+                <outlet property="showAllBtn" destination="gWw-Nd-0Rx" id="MN7-h9-HZ2"/>
+            </connections>
             <point key="canvasLocation" x="172.46376811594203" y="148.32589285714286"/>
         </tableViewCell>
     </objects>
