@@ -23,6 +23,8 @@ class AppListDataConvertor {
                 oneData.iconImage = $0.artworkUrl60 ?? ""
                 oneData.appName = $0.trackName ?? ""
                 oneData.appDesc = ""
+                oneData.appId = $0.trackId
+                
                 oneData.rating = $0.averageUserRating ?? 0.0
                 oneData.commentRating = $0.userRatingCountForCurrentVersion ?? 0
                 

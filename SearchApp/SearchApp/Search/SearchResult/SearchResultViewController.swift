@@ -60,6 +60,16 @@ extension SearchResultViewController : UITableViewDelegate, UITableViewDataSourc
         return UITableView.automaticDimension
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let data = self.listData?[indexPath.row] else {return}
+        
+       
+        let term = data.appName
+        let vc = AppDetailViewController(term : term)
+        vc.id = data.appId
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTableViewCell", for: indexPath) as? SearchResultTableViewCell {
             

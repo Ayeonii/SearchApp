@@ -27,6 +27,9 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6X3-lD-onQ">
                         <rect key="frame" x="0.0" y="29" width="132" height="81"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="81" id="dZm-GP-kLw"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>

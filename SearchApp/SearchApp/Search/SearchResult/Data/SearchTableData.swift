@@ -13,6 +13,7 @@ struct AppListData {
     var appDesc : String
     var rating : Double?
     var commentRating : Int
+    var appId : Int?
     
     var screenShot1 : String?
     var screenShot2 : String?
@@ -24,6 +25,7 @@ struct AppListData {
         appDesc = ""
         rating = nil
         commentRating = 0
+        appId = nil
         
         screenShot1 = nil
         screenShot2 = nil

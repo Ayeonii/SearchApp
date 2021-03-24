@@ -11,14 +11,16 @@ class TimeCalculate {
     
     lazy var getPassedTime : ((_ date : String?) -> String) = { (date) in
         let format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        format.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         format.locale = Locale(identifier: "ko")
+        
+        let date = format.date(from: date ?? "1900-12-31'T'00:00:00Z")!
+        format.dateFormat = "MM-dd-yyyy"
+        let cretTime = format.string(from: date)
 
-        let cretString = date ?? "1900-12-31 00:00:00"
-        let cretTimeArr : [String] = cretString.components(separatedBy: ".") //동영상 생성 날짜
         let currTime = format.string(from: Date()) //현재시간
         
-        let startTime = format.date(from: cretTimeArr[0] )
+        let startTime = format.date(from: cretTime)
         let endTime = format.date(from: currTime )
 
         let startDay = Calendar.current.dateComponents([.year, .month, .day], from: startTime!)

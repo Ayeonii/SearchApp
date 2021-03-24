@@ -19,9 +19,4 @@ class AppDetailReviewTableViewCell: UITableViewCell {
         super.awakeFromNib()
        
     }
-
-    func updateCellWithData(data :  String) {
-        self.reviewRating.text = "\(data.rating)"
-        self.numberOfReviewLabel.text = "\(data.userReviewCount)개의 평가"
-    }
 }

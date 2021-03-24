@@ -27,20 +27,4 @@ class CallHttpAPI {
         }
     }
     
-    open class func callSearchApiApapp(_ request :  SearchAnAppRequestParams, completion : @escaping ((_ result: SearchResultResponse?) -> Void)) {
-        
-        HttpManager.request("https://itunes.apple.com/search", "GET", encodable: request, responseClass: SearchResultResponse.self) { (result, error) in
-        
-            if let error = error {
-                print(error)
-                completion(nil)
-            } else {
-                if let result = result {
-                    completion(result)
-                } else {
-                    completion(nil)
-                }
-            }
-        }
-    }
 }

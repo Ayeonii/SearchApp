@@ -9,8 +9,9 @@ import Foundation
 
 
 class AppDetailConvertor {
-    var data : SearchResultResponse
     /*
+    var data : SearchResultResponse
+
     init(_ contentsData : SearchResultResponse) {
         self.data = contentsData
     }

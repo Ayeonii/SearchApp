@@ -124,7 +124,7 @@ struct AppDetailScreenShotDataModel {
 }
     
 struct AppDetailPromotionDataModel {
-    var promotionData : [String]?
+    var promotionData : String?
     
     init(_ data : SearchResults){
         if let promotionDesc = data.description {

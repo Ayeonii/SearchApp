@@ -11,12 +11,11 @@ class AppDetailVersionContentsTableViewCell: UITableViewCell {
 
     var model : AppDetailVersionContentsDataModel? {
         didSet{
-            if let data = model {
-                self.versionLabel.text = data.version != nil ? "버전 \(data.version!)" : ""
-                self.lastVersionDateLabel.text = data.lastDate != nil ? "\(data.lastDate!)전" : ""
-                self.newFunctionContents.text = data.newDescription ?? ""
-            }
+            self.versionLabel.text = model?.version != nil ? "버전 \(model!.version!)" : ""
+            self.lastVersionDateLabel.text = model?.lastDate != nil ? "\(model!.lastDate!)전" : ""
+            self.newFunctionContents.text = model?.newDescription ?? ""
         }
+        
     }
     @IBOutlet weak var versionHistoryBtn: UIButton!
     

@@ -12,6 +12,14 @@ class AppDetailScreenShotTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var supportDevices: UILabel!
     
+    var model : AppDetailScreenShotDataModel? {
+        didSet {
+            self.data = model?.screenShots
+        }
+    }
+    
+    var data : [String]?
+    
     var screenShotUrls : [String]?
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,7 +40,10 @@ extension AppDetailScreenShotTableViewCell : UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppDetailScreenshotCollectionViewCell", for: indexPath) as? AppDetailScreenshotCollectionViewCell {
-            
+            if let image = self.data?[indexPath.item] {
+                cell.screenShotImage.setImageUrl(image)
+            }
+          
             return cell
         }
         return UICollectionViewCell()
