@@ -19,7 +19,7 @@ class AppDetailPromotionTableViewCell: UITableViewCell {
     
     }
     
-    func updateCellWithData(data : String) {
+    func updateCellWithData(data : AppDetailInfoDataCellModel) {
         self.descriptionLabel.text = data
         
         //2줄 초과일 때, 2줄만 노출하고 나머지 초과된 줄중 3번째 줄을 lastLabel에 노출시킨다.

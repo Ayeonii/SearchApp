@@ -13,14 +13,14 @@ class AppDetailInfoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var content: UILabel!
     @IBOutlet weak var prefix: UILabel!
     
-    var data : AppDetailInfoData?
+    var data : AppDetailInfoDataModel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
     
-    func updateCellWithData(data : AppDetailInfoData){
+    func updateCellWithData(data : AppDetailInfoDataCellModel){
         self.title.text = data.title
         self.content.text = data.content
         self.prefix.text = data.prefix

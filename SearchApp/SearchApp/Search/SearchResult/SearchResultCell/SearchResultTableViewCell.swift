@@ -32,7 +32,7 @@ class SearchResultTableViewCell: UITableViewCell {
         self.setImageRound(screenShot1)
         self.setImageRound(screenShot2)
         self.setImageRound(screenShot3)
-        installBtn.layer.cornerRadius = installBtn.frame.height / 2
+        
     }
     
     func setImageRound(_ imageV : UIImageView) {
@@ -70,6 +70,7 @@ class SearchResultTableViewCell: UITableViewCell {
         self.screenShot1.setImageUrl(cellData.screenShot1 ?? "")
         self.screenShot2.setImageUrl(cellData.screenShot2 ?? "")
         self.screenShot3.setImageUrl(cellData.screenShot3 ?? "")
-         
+        
+        self.installBtn.layer.cornerRadius = installBtn.frame.height / 2
     }
 }

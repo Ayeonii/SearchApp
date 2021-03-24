@@ -11,6 +11,7 @@
 		CC12DA6B260988320022374B /* AppDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC12DA6A260988320022374B /* AppDetailData.swift */; };
 		CC12DA71260989BD0022374B /* AppDetailInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC12DA6F260989BD0022374B /* AppDetailInfoCollectionViewCell.swift */; };
 		CC12DA72260989BD0022374B /* AppDetailInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC12DA70260989BD0022374B /* AppDetailInfoCollectionViewCell.xib */; };
+		CC444260260AE13C007754E5 /* TimeCalculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC44425F260AE13C007754E5 /* TimeCalculate.swift */; };
 		CC5E52C42604315400619C1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E52C32604315400619C1A /* AppDelegate.swift */; };
 		CC5E52C62604315400619C1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E52C52604315400619C1A /* SceneDelegate.swift */; };
 		CC5E52CB2604315400619C1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5E52C92604315400619C1A /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		CC12DA6A260988320022374B /* AppDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailData.swift; sourceTree = "<group>"; };
 		CC12DA6F260989BD0022374B /* AppDetailInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC12DA70260989BD0022374B /* AppDetailInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailInfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		CC44425F260AE13C007754E5 /* TimeCalculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCalculate.swift; sourceTree = "<group>"; };
 		CC5E52C02604315400619C1A /* SearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5E52C32604315400619C1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC5E52C52604315400619C1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +169,14 @@
 			path = AppDetailCollectionCell;
 			sourceTree = "<group>";
 		};
+		CC44425E260AE12B007754E5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CC44425F260AE13C007754E5 /* TimeCalculate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		CC5E52B72604315400619C1A = {
 			isa = PBXGroup;
 			children = (
@@ -188,8 +198,9 @@
 		CC5E52C22604315400619C1A /* SearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				CC44425E260AE12B007754E5 /* Common */,
 				CC8F4F72260828EF003FFB49 /* Extension */,
-				D6D3F67A260716A0008C5DBA /* Http */,
+				D6D3F67A260716A0008C5DBA /* API */,
 				CC5E53572604AA8000619C1A /* Config */,
 				CC5E52DF260432E300619C1A /* Search */,
 				CC5E52C32604315400619C1A /* AppDelegate.swift */,
@@ -273,7 +284,7 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		D6D3F67A260716A0008C5DBA /* Http */ = {
+		D6D3F67A260716A0008C5DBA /* API */ = {
 			isa = PBXGroup;
 			children = (
 				D6D3F67B260716B4008C5DBA /* CallHttpApI.swift */,
@@ -281,7 +292,7 @@
 				D6D3F68226072024008C5DBA /* HttpRequestData.swift */,
 				D6D3F685260720FD008C5DBA /* HttpHeaderParam.swift */,
 			);
-			path = Http;
+			path = API;
 			sourceTree = "<group>";
 		};
 		D6D3F68F260736CA008C5DBA /* SearchResultCell */ = {
@@ -464,6 +475,7 @@
 				D6AAFE742608D3170043C177 /* AppDetailReviewSectionTableViewCell.swift in Sources */,
 				CC5E52F22604484600619C1A /* AppDetailViewController.swift in Sources */,
 				D6FD82F22608C82D005CBBB2 /* AppDetailInfoTableViewCell.swift in Sources */,
+				CC444260260AE13C007754E5 /* TimeCalculate.swift in Sources */,
 				D6D3F67F260716C3008C5DBA /* HttpManager.swift in Sources */,
 				CC5E52E22604330000619C1A /* SearchViewController.swift in Sources */,
 				D686C48A260A26200042492F /* SearchDataConvertor.swift in Sources */,

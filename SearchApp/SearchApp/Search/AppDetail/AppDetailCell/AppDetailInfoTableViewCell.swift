@@ -10,15 +10,16 @@ import UIKit
 class AppDetailInfoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var model : AppDetailInfoDataModel? {
+        didSet{
+            self.data = model?.detailInfo
+        }
+    }
+    var data : [AppDetailInfoDataCellModel]?
     
-    var data : [AppDetailInfoData]?
     override func awakeFromNib() {
         super.awakeFromNib()
         
-    }
-    
-    func updateCellWithData(detailData : [AppDetailInfoData]) {
-        self.data = detailData
     }
 }
 
