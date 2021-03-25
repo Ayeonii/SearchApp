@@ -14,6 +14,13 @@ class AppDetailScreenshotCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         screenShotImage.makeRadiusAndAspectFill()
+        
+        let ratio : CGFloat = 696/392
+        self.screenShotImage.addConstraint(NSLayoutConstraint(item: screenShotImage!, attribute: .height, relatedBy: .equal, toItem: screenShotImage!, attribute: .width, multiplier: ratio, constant: 0))
     }
-
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.screenShotImage.image = nil
+    }
 }

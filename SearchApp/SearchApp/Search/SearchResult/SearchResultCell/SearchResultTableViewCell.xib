@@ -18,19 +18,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="lu8-WF-ai5">
-                        <rect key="frame" x="16" y="163" width="470" height="271"/>
+                        <rect key="frame" x="16" y="92" width="470" height="342"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Mv-3G-tvr">
-                                <rect key="frame" x="0.0" y="0.0" width="152.5" height="271"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="1Mv-3G-tvr" secondAttribute="height" multiplier="392:696" id="PPC-Sf-VRI"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="152.5" height="342"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fWr-Hg-j86">
-                                <rect key="frame" x="158.5" y="0.0" width="153" height="271"/>
+                                <rect key="frame" x="158.5" y="0.0" width="153" height="342"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eRZ-DF-3lm">
-                                <rect key="frame" x="317.5" y="0.0" width="152.5" height="271"/>
+                                <rect key="frame" x="317.5" y="0.0" width="152.5" height="342"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -43,32 +40,32 @@
                         </constraints>
                     </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymu-da-yIP">
-                        <rect key="frame" x="0.0" y="0.0" width="502" height="163"/>
+                        <rect key="frame" x="0.0" y="0.0" width="502" height="92"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fmN-bD-1RX">
-                                <rect key="frame" x="16" y="16" width="131" height="131"/>
+                                <rect key="frame" x="16" y="16" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fmN-bD-1RX" secondAttribute="height" multiplier="1:1" id="Auc-3b-hzD"/>
                                     <constraint firstAttribute="height" priority="999" constant="60" id="wCh-gM-cgc"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVH-95-XQY">
-                                <rect key="frame" x="157" y="16" width="244" height="131"/>
+                                <rect key="frame" x="86" y="16" width="315" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공인인증서 필요없는 모바일은행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dje-BF-XnS">
-                                        <rect key="frame" x="2" y="57.5" width="240" height="16"/>
+                                        <rect key="frame" x="2" y="22" width="311" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오뱅크 - 같지만 다른 은행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNS-eK-52E">
-                                        <rect key="frame" x="2" y="0.0" width="240" height="19.5"/>
+                                        <rect key="frame" x="2" y="0.0" width="311" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xl5-NH-FSl">
-                                        <rect key="frame" x="2" y="115" width="240" height="16"/>
+                                        <rect key="frame" x="2" y="44" width="311" height="16"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rL7-xD-I99" customClass="CosmosView" customModule="Cosmos">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="16"/>
@@ -140,7 +137,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1a-Bj-Ir2">
-                                <rect key="frame" x="416" y="67" width="70" height="29"/>
+                                <rect key="frame" x="416" y="31.5" width="70" height="29"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="aJM-Eg-a2f"/>

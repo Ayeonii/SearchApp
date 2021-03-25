@@ -8,6 +8,21 @@
 import Foundation
 
 struct AppListData {
+    var data : [AppListDataCellModel]?
+    
+    init(_ response :  SearchResultResponse){
+        var appData : [AppListDataCellModel] = []
+        
+        if let res = response.results {
+            appData = res.map {
+                AppListDataCellModel($0)
+            }
+        }
+        self.data = appData
+    }
+}
+
+struct AppListDataCellModel {
     var iconImage : String
     var appName : String
     var appDesc : String
@@ -19,19 +34,22 @@ struct AppListData {
     var screenShot2 : String?
     var screenShot3 : String?
     
-    init(){
-        iconImage = ""
-        appName = ""
-        appDesc = ""
-        rating = nil
-        commentRating = 0
-        appId = nil
+    init(_ data : SearchResults) {
         
-        screenShot1 = nil
-        screenShot2 = nil
-        screenShot3 = nil
+        self.iconImage = data.artworkUrl60 ?? ""
+        self.appName = data.trackName ?? ""
+        self.appDesc = ""
+        self.appId = data.trackId
+            
+        self.rating = data.averageUserRating ?? 0.0
+        self.commentRating = data.userRatingCountForCurrentVersion ?? 0
+            
+        if let urls = data.screenshotUrls, urls.count > 0 {
+            self.screenShot1 = urls.count >= 1 ? urls[0] : nil
+            self.screenShot2 = urls.count >= 2 ? urls[1] : nil
+            self.screenShot3 = urls.count >= 3 ? urls[2] : nil
+        }
     }
-
 }
 
 

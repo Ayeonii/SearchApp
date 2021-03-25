@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum CellItem{
+enum AppDetailCellItem{
     case header(AppDetailHeaderDataModel?)
     case detailInfo(AppDetailInfoDataModel?)
     case versionInfo(AppDetailVersionContentsDataModel?)
@@ -17,15 +17,7 @@ enum CellItem{
 
 class AppDetailViewController: UIViewController {
 
-
-    @IBOutlet weak var tableView: UITableView! {
-        didSet {
-            tableView.delegate = self
-            tableView.dataSource = self
-            
-            registerTableViewCell()
-        }
-    }
+    @IBOutlet weak var tableView: UITableView!
     
     var id : Int?
     let name : String
@@ -34,20 +26,21 @@ class AppDetailViewController: UIViewController {
     var data : AppDetailData? {
         didSet {
             if let res = data {
-                cells.append(CellItem.header(res.headerData))
-                cells.append(CellItem.detailInfo(res.infoData))
-                cells.append(CellItem.versionInfo(res.versionData))
-                cells.append(CellItem.screenShotInfo(res.screenShots))
-                cells.append(CellItem.promotionInfo(res.promotionData))
+                var tmpCells : [AppDetailCellItem] = []
                 
-                DispatchQueue.main.async {
-                    self.tableView?.reloadData()
-                }
+                tmpCells.append(AppDetailCellItem.header(res.headerData))
+                tmpCells.append(AppDetailCellItem.detailInfo(res.infoData))
+                tmpCells.append(AppDetailCellItem.versionInfo(res.versionData))
+                tmpCells.append(AppDetailCellItem.screenShotInfo(res.screenShots))
+                tmpCells.append(AppDetailCellItem.promotionInfo(res.promotionData))
+                
+                cells = tmpCells
+                self.tableView.reloadData()
             }
         }
     }
 
-    var cells : [CellItem] = []
+    var cells : [AppDetailCellItem] = []
 
     init(term : String) {
         self.name = term
@@ -72,7 +65,10 @@ class AppDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         
+        registerTableViewCell()
     }
     
     func registerTableViewCell() {
@@ -85,8 +81,7 @@ class AppDetailViewController: UIViewController {
         tableView.register(UINib(nibName: "AppDetailScreenShotTableViewCell", bundle: nil), forCellReuseIdentifier: "AppDetailScreenShotTableViewCell")
         
         tableView.register(UINib(nibName: "AppDetailPromotionTableViewCell", bundle: nil), forCellReuseIdentifier: "AppDetailPromotionTableViewCell")
-        
-        
+    
     }
     
 }
@@ -133,9 +128,6 @@ extension AppDetailViewController : UITableViewDelegate, UITableViewDataSource {
             return cell
             
         }
-        
-       
-        return UITableViewCell()
 
     }
 

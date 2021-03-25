@@ -13,7 +13,11 @@ class SearchResultViewController: UIViewController {
     let searchWord : String
     
     var rowNum = 1
-    var listData : [AppListData]?
+    var listData : [AppListDataCellModel]? {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     
     init(word : String) {
         self.searchWord = word
@@ -28,12 +32,10 @@ class SearchResultViewController: UIViewController {
         super.loadView()
         
         let req = SearchRequestParams(searchTerm: searchWord, entity: "software")
-        
         CallHttpAPI.callSearchApi(req){ result in
             if let res = result {
                 self.rowNum = res.resultCount ?? 0
-                self.listData = AppListDataConvertor(res).getAppListData()
-                self.tableView.reloadData()
+                self.listData = AppListData(res).data
             }
         }
     }
@@ -44,9 +46,9 @@ class SearchResultViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        
         tableView.register(UINib(nibName: "SearchResultTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchResultTableViewCell")
     }
-    
 }
 
 extension SearchResultViewController : UITableViewDelegate, UITableViewDataSource {
@@ -63,7 +65,6 @@ extension SearchResultViewController : UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let data = self.listData?[indexPath.row] else {return}
         
-       
         let term = data.appName
         let vc = AppDetailViewController(term : term)
         vc.id = data.appId
@@ -71,15 +72,12 @@ extension SearchResultViewController : UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTableViewCell", for: indexPath) as? SearchResultTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTableViewCell", for: indexPath) as! SearchResultTableViewCell
             
-            if let data = self.listData {
-                cell.updateCellWithData(data[indexPath.row])
-            }
-            cell.selectionStyle = .none
-            return cell
-        }
-        return UITableViewCell()
+        guard let data = self.listData?[indexPath.row] else {return cell}
+        cell.model = data
+        cell.selectionStyle = .none
+        
+        return cell
     }
-    
 }

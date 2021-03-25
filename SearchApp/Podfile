@@ -5,6 +5,7 @@ target 'SearchApp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'Cosmos', '~> 23.0'
+  pod 'SwifterSwift'
   # Pods for SearchApp
 
 end

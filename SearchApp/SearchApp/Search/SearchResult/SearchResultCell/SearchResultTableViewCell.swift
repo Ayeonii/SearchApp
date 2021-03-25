@@ -17,13 +17,30 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var ratingStarView: CosmosView!
     
-    
     @IBOutlet weak var installBtn: UIButton!
     @IBOutlet weak var screenShot1: UIImageView!
     @IBOutlet weak var screenShot2: UIImageView!
     @IBOutlet weak var screenShot3: UIImageView!
     
-    var data : AppListData?
+    var model : AppListDataCellModel? {
+        didSet {
+            if let data = model {
+                self.appName.text = data.appName
+                self.appDesc.text = data.appDesc
+                self.ratingLabel.text = String(data.commentRating.countNum())
+                
+                let userRating = data.rating ?? 0.0
+                self.ratingStarView.rating = round(userRating * 10) / 10
+    
+                self.iconImage.setImageUrl(data.iconImage)
+                self.screenShot1.setImageUrl(data.screenShot1 ?? "")
+                self.screenShot2.setImageUrl(data.screenShot2 ?? "")
+                self.screenShot3.setImageUrl(data.screenShot3 ?? "")
+                
+                
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,7 +49,14 @@ class SearchResultTableViewCell: UITableViewCell {
         self.setImageRound(screenShot1)
         self.setImageRound(screenShot2)
         self.setImageRound(screenShot3)
+        self.installBtn.layer.cornerRadius = installBtn.frame.height / 2
         
+        let ratio : CGFloat = 696/392
+        
+        self.screenShot1.addConstraint(NSLayoutConstraint(item: screenShot1!, attribute: .height, relatedBy: .equal, toItem: screenShot1!, attribute: .width, multiplier: ratio, constant: 0))
+        self.screenShot2.addConstraint(NSLayoutConstraint(item: screenShot2!, attribute: .height, relatedBy: .equal, toItem: screenShot2!, attribute: .width, multiplier: ratio, constant: 0))
+        self.screenShot3.addConstraint(NSLayoutConstraint(item: screenShot3!, attribute: .height, relatedBy: .equal, toItem: screenShot3!, attribute: .width, multiplier: ratio, constant: 0))
+    
     }
     
     func setImageRound(_ imageV : UIImageView) {
@@ -53,24 +77,6 @@ class SearchResultTableViewCell: UITableViewCell {
         screenShot1.image = UIImage()
         screenShot2.image = UIImage()
         screenShot3.image = UIImage()
-        
     }
     
-    func updateCellWithData(_ cellData : AppListData){
-        self.data = cellData
-        
-        self.appName.text = cellData.appName
-        self.appDesc.text = cellData.appDesc
-        self.ratingLabel.text = String(cellData.commentRating.countNum())
-        
-        let userRating = cellData.rating ?? 0.0
-        self.ratingStarView.rating = round(userRating * 10) / 10
-        
-        self.iconImage.setImageUrl(cellData.iconImage)
-        self.screenShot1.setImageUrl(cellData.screenShot1 ?? "")
-        self.screenShot2.setImageUrl(cellData.screenShot2 ?? "")
-        self.screenShot3.setImageUrl(cellData.screenShot3 ?? "")
-        
-        self.installBtn.layer.cornerRadius = installBtn.frame.height / 2
-    }
 }

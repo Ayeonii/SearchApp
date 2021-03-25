@@ -9,16 +9,16 @@ import UIKit
 
 class AppDetailInfoTableViewCell: UITableViewCell {
 
-    var flowLayout = UICollectionViewFlowLayout()
+    
+    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
     var model : AppDetailInfoDataModel? {
         didSet{
             self.data = model?.detailInfo
-            flowLayout.itemSize = CGSize(width: collectionView.frame.size.width / 3, height: collectionView.frame.size.height)
-            self.collectionView.collectionViewLayout = flowLayout
         }
     }
     var data : [AppDetailInfoDataCellModel]?
+    var flowLayout = UICollectionViewFlowLayout()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +27,9 @@ class AppDetailInfoTableViewCell: UITableViewCell {
         collectionView.showsHorizontalScrollIndicator = false
         
         flowLayout.scrollDirection = .horizontal
-       
+        flowLayout.itemSize = CGSize(width: collectionView.frame.size.width / 3, height: collectionView.frame.size.height)
+        collectionViewHeight.constant = collectionView.frame.size.height
+            
         collectionView.collectionViewLayout = flowLayout
         
         collectionView.register(UINib(nibName: "AppDetailInfoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AppDetailInfoCollectionViewCell")
@@ -42,12 +44,9 @@ extension AppDetailInfoTableViewCell : UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppDetailInfoCollectionViewCell", for: indexPath) as? AppDetailInfoCollectionViewCell {
-            
             if let cellData = data {
                 cell.model = cellData[indexPath.item]
-          
             }
-            
             return cell
         }
         

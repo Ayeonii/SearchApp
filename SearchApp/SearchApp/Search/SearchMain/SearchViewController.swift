@@ -10,10 +10,10 @@ import UIKit
 class SearchViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var observer: NSKeyValueObservation?
+
     var filteredData : [String]?
     var searchController : UISearchController?
-    let profileButton = UIButton()
+    var childView : UIViewController?
     
     var isSearchingActivate : Bool {
         let searchController = self.navigationItem.searchController
@@ -31,7 +31,7 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        definesPresentationContext = true
+
         self.setupTableView()
         self.setupNavigation()
     }
@@ -48,9 +48,9 @@ class SearchViewController: UIViewController {
         searchController?.searchBar.delegate = self
         
         let navBar = self.navigationController?.navigationBar
-        
+
         searchController?.searchBar.placeholder = "게임, 앱, 스토리 등"
-        searchController?.hidesNavigationBarDuringPresentation = false
+        searchController?.hidesNavigationBarDuringPresentation = true
         searchController?.obscuresBackgroundDuringPresentation = false
         searchController?.searchBar.setValue("취소", forKey: "cancelButtonText")
         
@@ -58,27 +58,9 @@ class SearchViewController: UIViewController {
         navigationItem.title = "검색"
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController!
-        
-        
-        profileButton.setBackgroundImage(UIImage(named: "earth_icon"), for: .normal)
-        profileButton.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
-        navBar?.addSubview(profileButton)
-        profileButton.frame = CGRect(x: self.view.frame.width, y: 0, width: 50, height: 50)
-        
-        var constraints: [NSLayoutConstraint] = []
-        constraints.append(NSLayoutConstraint(item: profileButton, attribute: .trailingMargin, relatedBy: .equal, toItem: navBar, attribute: .trailingMargin, multiplier: 1.0, constant: -16))
-        constraints.append(NSLayoutConstraint(item: profileButton, attribute: .bottom, relatedBy: .equal, toItem: navBar, attribute: .bottom, multiplier: 1.0, constant: -searchController!.searchBar.frame.height - 6))
-        
-        profileButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(constraints)
-        
+
     }
 
-    
-    @objc func profileButtonTapped(sender : Any) {
-        
-    }
-    
     func saveRecentSearchData(_ txt : String) {
            
         if self.recentList == nil {
@@ -90,6 +72,40 @@ class SearchViewController: UIViewController {
             self.recentList = uniqueList
         }
         StoredData.shared.setRecentSearchData(param: self.recentList)
+    }
+    
+    func addChildViewController(child : UIViewController) {
+        self.addChild(child)
+        self.view.addSubview(child.view)
+        child.didMove(toParent: self)
+        self.childView = child
+    }
+    
+    func removeChildViewController() {
+        guard let child = self.childView else {return}
+        
+        guard child.parent != nil else { return }
+
+        child.willMove(toParent: nil)
+        child.removeFromParent()
+        child.view.removeFromSuperview()
+        ImageCacahe.shared.removeAllObjects()
+    }
+    
+    func goToResult(_ text : String) {
+        
+        searchController?.isActive = true
+       
+        self.searchController?.hidesNavigationBarDuringPresentation = true
+        self.navigationItem.searchController?.searchBar.text = text
+        let resultVC = SearchResultViewController(word : text)
+        resultVC.modalPresentationStyle = .fullScreen
+        resultVC.view.center = CGPoint(x : self.tableView.frame.size.width / 2,
+                                       y : self.tableView.frame.size.height / 2)
+        
+        self.addChildViewController(child : resultVC)
+
+        self.saveRecentSearchData(text)
     }
     
 }
@@ -107,7 +123,7 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
         let v = UIView()
         let label = UILabel()
         v.addSubview(label)
-        v.backgroundColor = .clear
+        v.backgroundColor = .systemBackground
         label.translatesAutoresizingMaskIntoConstraints = false
         label.leftAnchor.constraint(equalTo: v.leftAnchor, constant: 16).isActive = true
         label.centerYAnchor.constraint(equalTo: v.centerYAnchor).isActive = true
@@ -125,12 +141,13 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCellid", for: indexPath) as? SearchTableViewCell {
             var tableData : [String]
+            
             if isSearchingActivate {
                 guard let filtered = self.filteredData else {return cell}
-                tableData = filtered
+                tableData = filtered.reversed()
             } else  {
                 guard let recent = self.recentList else {return cell}
-                tableData = recent
+                tableData = recent.reversed()
             }
 
             cell.recentLabel.text = tableData[indexPath.row]
@@ -141,22 +158,21 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let clickedData : String
-        
+        var texts : [String]
         if isSearchingActivate {
-            guard let data =  filteredData else {return}
-            clickedData = data[indexPath.row]
+            guard let data = filteredData else {return}
+            texts = data.reversed()
         } else {
             guard let data =  recentList else {return }
-            clickedData = data[indexPath.row]
+            texts = data.reversed()
         }
         
-        self.navigationItem.searchController?.searchBar.text = clickedData
-        let resultVC = SearchResultViewController(word : clickedData)
-        self.navigationController?.pushViewController(resultVC, animated: true)
-        self.saveRecentSearchData(clickedData)
+        let text = texts[indexPath.row]
         
+        self.goToResult(text)
     }
+    
+    
 }
 
 extension SearchViewController : UISearchResultsUpdating, UISearchBarDelegate {
@@ -173,16 +189,24 @@ extension SearchViewController : UISearchResultsUpdating, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar : UISearchBar) {
-        let text = searchBar.text ?? ""
-        
-        self.navigationItem.searchController?.searchBar.text = text
-        let resultVC = SearchResultViewController(word : text)
-        self.navigationController?.pushViewController(resultVC, animated: true)
-        self.saveRecentSearchData(text)
+        guard let text = searchBar.text else {return}
+        self.goToResult(text)
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        self.searchController?.hidesNavigationBarDuringPresentation = true
+        guard let text = searchBar.text else {return true}
+        if text.isEmpty {
+            self.removeChildViewController()
+        }
         return true
+    }
+
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.removeChildViewController()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.removeChildViewController()
     }
 }

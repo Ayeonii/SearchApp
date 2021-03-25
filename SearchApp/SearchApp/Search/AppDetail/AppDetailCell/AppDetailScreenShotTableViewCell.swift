@@ -14,21 +14,32 @@ class AppDetailScreenShotTableViewCell: UITableViewCell {
     
     var model : AppDetailScreenShotDataModel? {
         didSet {
-            self.data = model?.screenShots
+            self.screenShotUrls = model?.screenShots
         }
     }
     
-    var data : [String]?
-    
+    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     var screenShotUrls : [String]?
+    var flowLayout = UICollectionViewFlowLayout()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.isScrollEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
+        
+        flowLayout.scrollDirection = .horizontal
+        
+        let itemWidth = collectionView.frame.size.width * (2/3)
+        let ratio : CGFloat = 696/392
+        
+        flowLayout.itemSize = CGSize(width : itemWidth, height: itemWidth * ratio)
+        
+        collectionViewHeight.constant = itemWidth * ratio
+        collectionView.collectionViewLayout = flowLayout
         self.collectionView.register(UINib(nibName: "AppDetailScreenshotCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AppDetailScreenshotCollectionViewCell")
-    }
-
-    func updateCellWithData(_ data : [String]) {
-        self.screenShotUrls = data
     }
 }
 
@@ -40,7 +51,7 @@ extension AppDetailScreenShotTableViewCell : UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppDetailScreenshotCollectionViewCell", for: indexPath) as? AppDetailScreenshotCollectionViewCell {
-            if let image = self.data?[indexPath.item] {
+            if let image = screenShotUrls?[indexPath.item] {
                 cell.screenShotImage.setImageUrl(image)
             }
           
