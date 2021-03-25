@@ -12,7 +12,7 @@ class SearchResultViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let searchWord : String
     
-    var rowNum = 1
+    var rowNum = 0
     var listData : [AppListDataCellModel]? {
         didSet {
             self.tableView.reloadData()
@@ -31,12 +31,14 @@ class SearchResultViewController: UIViewController {
     override func loadView() {
         super.loadView()
         
+        self.tableView?.isHidden = true
         let req = SearchRequestParams(searchTerm: searchWord, entity: "software")
         CallHttpAPI.callSearchApi(req){ result in
             if let res = result {
                 self.rowNum = res.resultCount ?? 0
                 self.listData = AppListData(res).data
             }
+            self.tableView?.isHidden = false
         }
     }
     
@@ -48,17 +50,24 @@ class SearchResultViewController: UIViewController {
         tableView.separatorStyle = .none
         
         tableView.register(UINib(nibName: "SearchResultTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchResultTableViewCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "NoSearchResultCell")
     }
 }
 
 extension SearchResultViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if rowNum == 0 {
+            return 1
+        }
         
         return rowNum
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if rowNum == 0 {
+            return self.tableView.frame.height
+        }
         return UITableView.automaticDimension
     }
     
@@ -72,12 +81,30 @@ extension SearchResultViewController : UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTableViewCell", for: indexPath) as! SearchResultTableViewCell
+        if rowNum == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NoSearchResultCell", for: indexPath)
             
-        guard let data = self.listData?[indexPath.row] else {return cell}
-        cell.model = data
-        cell.selectionStyle = .none
+            let noSearchLabel = UILabel()
+            cell.addSubview(noSearchLabel)
+            
+            noSearchLabel.translatesAutoresizingMaskIntoConstraints = false
+            noSearchLabel.text = "검색결과가 없습니다."
+            noSearchLabel.textAlignment = .center
+            noSearchLabel.centerYAnchor.constraint(equalTo: cell.centerYAnchor).isActive = true
+            noSearchLabel.centerXAnchor.constraint(equalTo: cell.centerXAnchor).isActive = true
+            noSearchLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            noSearchLabel.widthAnchor.constraint(equalToConstant: 150).isActive = true
         
-        return cell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTableViewCell", for: indexPath) as! SearchResultTableViewCell
+            
+            guard let data = self.listData?[indexPath.row] else {return cell}
+            cell.model = data
+            cell.selectionStyle = .none
+        
+            return cell
+        }
     }
+ 
 }

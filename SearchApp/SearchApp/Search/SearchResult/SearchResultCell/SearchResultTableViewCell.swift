@@ -60,9 +60,7 @@ class SearchResultTableViewCell: UITableViewCell {
     }
     
     func setImageRound(_ imageV : UIImageView) {
-        imageV.layer.cornerRadius = 13
-        imageV.layer.borderWidth = 0.2
-        imageV.layer.borderColor = UIColor.lightGray.cgColor
+        imageV.makeRadius()
         imageV.contentMode = .scaleAspectFill
     }
     

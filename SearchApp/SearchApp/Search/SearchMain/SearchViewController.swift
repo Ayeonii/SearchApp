@@ -95,8 +95,7 @@ class SearchViewController: UIViewController {
     func goToResult(_ text : String) {
         
         searchController?.isActive = true
-       
-        self.searchController?.hidesNavigationBarDuringPresentation = true
+
         self.navigationItem.searchController?.searchBar.text = text
         let resultVC = SearchResultViewController(word : text)
         resultVC.modalPresentationStyle = .fullScreen

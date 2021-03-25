@@ -41,7 +41,7 @@ class AppDetailViewController: UIViewController {
     }
 
     var cells : [AppDetailCellItem] = []
-
+    
     init(term : String) {
         self.name = term
         super.init(nibName: "SearchResultViewController", bundle: nil)
@@ -67,7 +67,7 @@ class AppDetailViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
+
         registerTableViewCell()
     }
     
@@ -83,7 +83,7 @@ class AppDetailViewController: UIViewController {
         tableView.register(UINib(nibName: "AppDetailPromotionTableViewCell", bundle: nil), forCellReuseIdentifier: "AppDetailPromotionTableViewCell")
     
     }
-    
+
 }
 
 extension AppDetailViewController : UITableViewDelegate, UITableViewDataSource {
@@ -94,6 +94,10 @@ extension AppDetailViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

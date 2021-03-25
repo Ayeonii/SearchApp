@@ -31,6 +31,8 @@
 		CC8F4F74260828FD003FFB49 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8F4F73260828FD003FFB49 /* UIImageViewExtension.swift */; };
 		CCF31392260C6D020015CB73 /* AppDetailHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF31390260C6D020015CB73 /* AppDetailHeaderTableViewCell.xib */; };
 		CCF31393260C6D020015CB73 /* AppDetailHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF31391260C6D020015CB73 /* AppDetailHeaderTableViewCell.swift */; };
+		CCF31397260C71CE0015CB73 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF31395260C71CE0015CB73 /* HeaderViewController.swift */; };
+		CCF31398260C71CE0015CB73 /* HeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF31396260C71CE0015CB73 /* HeaderViewController.xib */; };
 		D686C47E260A18690042492F /* AppDetailScreenshotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D686C47C260A18690042492F /* AppDetailScreenshotCollectionViewCell.swift */; };
 		D686C47F260A18690042492F /* AppDetailScreenshotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D686C47D260A18690042492F /* AppDetailScreenshotCollectionViewCell.xib */; };
 		D686C483260A1BCF0042492F /* AppDetailReviewSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D686C481260A1BCF0042492F /* AppDetailReviewSectionCollectionViewCell.swift */; };
@@ -87,6 +89,8 @@
 		CC8F4F73260828FD003FFB49 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		CCF31390260C6D020015CB73 /* AppDetailHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppDetailHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		CCF31391260C6D020015CB73 /* AppDetailHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		CCF31395260C71CE0015CB73 /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
+		CCF31396260C71CE0015CB73 /* HeaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderViewController.xib; sourceTree = "<group>"; };
 		D686C47C260A18690042492F /* AppDetailScreenshotCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailScreenshotCollectionViewCell.swift; sourceTree = "<group>"; };
 		D686C47D260A18690042492F /* AppDetailScreenshotCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailScreenshotCollectionViewCell.xib; sourceTree = "<group>"; };
 		D686C481260A1BCF0042492F /* AppDetailReviewSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailReviewSectionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 				CC5E52F02604484600619C1A /* AppDetailViewController.swift */,
 				CC5E52F12604484600619C1A /* AppDetailViewController.xib */,
 				D6D3F6A726074F8D008C5DBA /* AppDetailCell */,
+				CCF31395260C71CE0015CB73 /* HeaderViewController.swift */,
+				CCF31396260C71CE0015CB73 /* HeaderViewController.xib */,
 			);
 			path = AppDetail;
 			sourceTree = "<group>";
@@ -396,6 +402,7 @@
 				D6AAFE662608CCD80043C177 /* AppDetailScreenShotTableViewCell.xib in Resources */,
 				D6FD82F32608C82D005CBBB2 /* AppDetailInfoTableViewCell.xib in Resources */,
 				D6FD82F82608C8E1005CBBB2 /* AppDetailVersionContentsTableViewCell.xib in Resources */,
+				CCF31398260C71CE0015CB73 /* HeaderViewController.xib in Resources */,
 				D686C484260A1BCF0042492F /* AppDetailReviewSectionCollectionViewCell.xib in Resources */,
 				CC5E52CD2604315500619C1A /* Assets.xcassets in Resources */,
 				D6AAFE702608CFE60043C177 /* AppDetailReviewTableViewCell.xib in Resources */,
@@ -471,6 +478,7 @@
 				D6FD82F22608C82D005CBBB2 /* AppDetailInfoTableViewCell.swift in Sources */,
 				CC444260260AE13C007754E5 /* TimeCalculate.swift in Sources */,
 				D6D3F67F260716C3008C5DBA /* HttpManager.swift in Sources */,
+				CCF31397260C71CE0015CB73 /* HeaderViewController.swift in Sources */,
 				CC5E52E22604330000619C1A /* SearchViewController.swift in Sources */,
 				CC5E53592604AA9000619C1A /* StoredData.swift in Sources */,
 				D6D3F67826071664008C5DBA /* SearchResultCodable.swift in Sources */,
