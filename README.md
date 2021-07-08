@@ -1,2 +1,2 @@
 # SearchTest
-AppStore의 검색 기능을 참고하여 구현
+AppStore의 검색 기능을 바탕으로 구현
