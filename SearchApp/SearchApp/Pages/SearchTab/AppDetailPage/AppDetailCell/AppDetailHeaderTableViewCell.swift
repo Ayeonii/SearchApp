@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 
 class AppDetailHeaderTableViewCell: UITableViewCell {
@@ -19,7 +20,7 @@ class AppDetailHeaderTableViewCell: UITableViewCell {
     
     var model : AppDetailHeaderDataModel? {
         didSet{
-            self.iconImage.setImageUrl(model?.iconImage ?? "")
+            self.iconImage.kf.setImage(with: URL(string: model?.iconImage ?? ""),placeholder: UIImage(named : "noImgWidth"))
             self.appName.text = model?.appName ?? ""
             self.appSubName.text = model?.appDesc ?? ""
         }

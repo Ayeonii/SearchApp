@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 enum AppDetailCellItem{
     case header(AppDetailHeaderDataModel?)
@@ -19,6 +20,7 @@ class AppDetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var disposeBag = DisposeBag()
     var id : Int?
     let name : String
     
@@ -55,12 +57,15 @@ class AppDetailViewController: UIViewController {
         super.loadView()
         
         let req = SearchRequestParams(searchTerm: name)
-        CallHttpAPI.callSearchApi(req){ result in
-            if let res = result {
+        CallHttpAPI.callSearchApi(req)
+            .subscribe(onNext: { res in
                 self.data = AppDetailData(res)
-               
-            }
-        }
+            }, onError: { error in
+                debugPrint(error)
+            }, onCompleted: {
+                debugPrint("Completed!")
+            })
+            .disposed(by: disposeBag)
     }
     
     override func viewDidLoad() {
@@ -70,6 +75,10 @@ class AppDetailViewController: UIViewController {
 
         registerTableViewCell()
     }
+    
+}
+
+extension AppDetailViewController {
     
     func registerTableViewCell() {
         tableView.register(UINib(nibName: "AppDetailHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "AppDetailHeaderTableViewCell")

@@ -52,7 +52,7 @@ extension AppDetailScreenShotTableViewCell : UICollectionViewDelegate, UICollect
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppDetailScreenshotCollectionViewCell", for: indexPath) as? AppDetailScreenshotCollectionViewCell {
             if let image = screenShotUrls?[indexPath.item] {
-                cell.screenShotImage.setImageUrl(image)
+                cell.screenShotImage.kf.setImage(with: URL(string: image), placeholder: UIImage(named : "noImgWidth"), options: [.transition(.fade(0.4))])
             }
           
             return cell

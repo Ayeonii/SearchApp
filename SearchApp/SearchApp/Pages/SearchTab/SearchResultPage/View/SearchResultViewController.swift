@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SearchResultViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     let searchWord : String
     
+    var disposeBag = DisposeBag()
     var rowNum = 0
     var listData : [AppListDataCellModel]? {
         didSet {
@@ -33,13 +36,20 @@ class SearchResultViewController: UIViewController {
         
         self.tableView?.isHidden = true
         let req = SearchRequestParams(searchTerm: searchWord, entity: "software")
-        CallHttpAPI.callSearchApi(req){ result in
-            if let res = result {
+        CallHttpAPI.callSearchApi(req)
+            .subscribe(onNext: { res in
+                
                 self.rowNum = res.resultCount ?? 0
                 self.listData = AppListData(res).data
-            }
-            self.tableView?.isHidden = false
-        }
+                
+                self.tableView?.isHidden = false
+            }, onError: { error in
+                debugPrint(error)
+            }, onCompleted: {
+                debugPrint("Completed!")
+            })
+            .disposed(by: disposeBag)
+        
     }
     
     override func viewDidLoad() {

@@ -32,10 +32,10 @@ class SearchResultTableViewCell: UITableViewCell {
                 let userRating = data.rating ?? 0.0
                 self.ratingStarView.rating = round(userRating * 10) / 10
     
-                self.iconImage.setImageUrl(data.iconImage)
-                self.screenShot1.setImageUrl(data.screenShot1 ?? "")
-                self.screenShot2.setImageUrl(data.screenShot2 ?? "")
-                self.screenShot3.setImageUrl(data.screenShot3 ?? "")
+                self.iconImage.kf.setImage(with: URL(string: data.iconImage), placeholder: UIImage(named : "noImgWidth"), options: [.transition(.fade(0.4))])
+                self.screenShot1.kf.setImage(with: URL(string: data.screenShot1 ?? ""),placeholder: UIImage(named : "noImgWidth"), options: [.transition(.fade(0.4))])
+                self.screenShot2.kf.setImage(with: URL(string: data.screenShot2 ?? ""),placeholder: UIImage(named :"noImgWidth"), options: [.transition(.fade(0.4))])
+                self.screenShot3.kf.setImage(with: URL(string: data.screenShot3 ?? ""),placeholder: UIImage(named :"noImgWidth"), options: [.transition(.fade(0.4))])
                 
                 
             }
@@ -60,7 +60,7 @@ class SearchResultTableViewCell: UITableViewCell {
     }
     
     func setImageRound(_ imageV : UIImageView) {
-        imageV.makeRadius()
+       // imageV.makeRadius()
         imageV.contentMode = .scaleAspectFill
     }
     

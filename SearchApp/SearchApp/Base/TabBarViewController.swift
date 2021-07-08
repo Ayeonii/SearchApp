@@ -24,9 +24,9 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func setTabbarVC () {
-        self.searchTabVC = SearchViewController(nibName: "SearchViewController", bundle: nil)
-        let navigationWithSearchVC = UINavigationController(rootViewController: searchTabVC!)
-        self.viewControllers = [navigationWithSearchVC]
+        self.searchTabVC = SearchMainViewController(nibName: "SearchMainViewController", bundle: nil)
+
+        self.viewControllers = [UINavigationController(rootViewController: searchTabVC!)]
     }
     
     func setTabbarItem() {

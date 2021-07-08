@@ -8,6 +8,7 @@ target 'SearchApp' do
   use_frameworks!
   pod 'Cosmos', '~> 23.0'
   pod 'SwifterSwift'
+  pod 'Kingfisher'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxGesture'

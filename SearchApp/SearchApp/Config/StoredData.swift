@@ -15,7 +15,7 @@ class StoredData {
     
     var recentSearchData : [String]?
     
-    //최근검색데이터 - 50개 갯수 제한 (필요 시, 삭제)
+    //최근검색데이터 - 50개 갯수 제한 (수정 가능)
     func setRecentSearchData(param : [String]?) {
         
         var list = param
