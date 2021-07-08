@@ -47,9 +47,9 @@
 		D6AAFE752608D3170043C177 /* AppDetailReviewSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6AAFE732608D3170043C177 /* AppDetailReviewSectionTableViewCell.xib */; };
 		D6D3F67826071664008C5DBA /* SearchResultCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F67726071664008C5DBA /* SearchResultCodable.swift */; };
 		D6D3F67C260716B4008C5DBA /* CallHttpApI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F67B260716B4008C5DBA /* CallHttpApI.swift */; };
-		D6D3F67F260716C3008C5DBA /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F67E260716C3008C5DBA /* HttpManager.swift */; };
-		D6D3F68326072024008C5DBA /* HttpRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F68226072024008C5DBA /* HttpRequestData.swift */; };
-		D6D3F686260720FD008C5DBA /* HttpHeaderParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F685260720FD008C5DBA /* HttpHeaderParam.swift */; };
+		D6D3F67F260716C3008C5DBA /* HttpAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F67E260716C3008C5DBA /* HttpAPIManager.swift */; };
+		D6D3F68326072024008C5DBA /* HttpApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F68226072024008C5DBA /* HttpApiRequest.swift */; };
+		D6D3F686260720FD008C5DBA /* HttpApiHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F685260720FD008C5DBA /* HttpApiHeader.swift */; };
 		D6D3F692260736F6008C5DBA /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F690260736F6008C5DBA /* SearchResultTableViewCell.swift */; };
 		D6D3F693260736F6008C5DBA /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D3F691260736F6008C5DBA /* SearchResultTableViewCell.xib */; };
 		D6D3F69B26074224008C5DBA /* SearchTableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F69A26074224008C5DBA /* SearchTableData.swift */; };
@@ -105,9 +105,9 @@
 		D6AAFE732608D3170043C177 /* AppDetailReviewSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailReviewSectionTableViewCell.xib; sourceTree = "<group>"; };
 		D6D3F67726071664008C5DBA /* SearchResultCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCodable.swift; sourceTree = "<group>"; };
 		D6D3F67B260716B4008C5DBA /* CallHttpApI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHttpApI.swift; sourceTree = "<group>"; };
-		D6D3F67E260716C3008C5DBA /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
-		D6D3F68226072024008C5DBA /* HttpRequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestData.swift; sourceTree = "<group>"; };
-		D6D3F685260720FD008C5DBA /* HttpHeaderParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHeaderParam.swift; sourceTree = "<group>"; };
+		D6D3F67E260716C3008C5DBA /* HttpAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpAPIManager.swift; sourceTree = "<group>"; };
+		D6D3F68226072024008C5DBA /* HttpApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpApiRequest.swift; sourceTree = "<group>"; };
+		D6D3F685260720FD008C5DBA /* HttpApiHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpApiHeader.swift; sourceTree = "<group>"; };
 		D6D3F690260736F6008C5DBA /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		D6D3F691260736F6008C5DBA /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
 		D6D3F69A26074224008C5DBA /* SearchTableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableData.swift; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 			children = (
 				CC44425E260AE12B007754E5 /* Common */,
 				CC8F4F72260828EF003FFB49 /* Extension */,
-				D6D3F67A260716A0008C5DBA /* API */,
+				D6D3F67A260716A0008C5DBA /* Service */,
 				CC5E53572604AA8000619C1A /* Config */,
 				CC5E52DF260432E300619C1A /* Search */,
 				CC5E52C32604315400619C1A /* AppDelegate.swift */,
@@ -284,15 +284,15 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		D6D3F67A260716A0008C5DBA /* API */ = {
+		D6D3F67A260716A0008C5DBA /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				D6D3F67B260716B4008C5DBA /* CallHttpApI.swift */,
-				D6D3F67E260716C3008C5DBA /* HttpManager.swift */,
-				D6D3F68226072024008C5DBA /* HttpRequestData.swift */,
-				D6D3F685260720FD008C5DBA /* HttpHeaderParam.swift */,
+				D6D3F67E260716C3008C5DBA /* HttpAPIManager.swift */,
+				D6D3F68226072024008C5DBA /* HttpApiRequest.swift */,
+				D6D3F685260720FD008C5DBA /* HttpApiHeader.swift */,
 			);
-			path = API;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		D6D3F68F260736CA008C5DBA /* SearchResultCell */ = {
@@ -477,20 +477,20 @@
 				CC5E52F22604484600619C1A /* AppDetailViewController.swift in Sources */,
 				D6FD82F22608C82D005CBBB2 /* AppDetailInfoTableViewCell.swift in Sources */,
 				CC444260260AE13C007754E5 /* TimeCalculate.swift in Sources */,
-				D6D3F67F260716C3008C5DBA /* HttpManager.swift in Sources */,
+				D6D3F67F260716C3008C5DBA /* HttpAPIManager.swift in Sources */,
 				CCF31397260C71CE0015CB73 /* HeaderViewController.swift in Sources */,
 				CC5E52E22604330000619C1A /* SearchViewController.swift in Sources */,
 				CC5E53592604AA9000619C1A /* StoredData.swift in Sources */,
 				D6D3F67826071664008C5DBA /* SearchResultCodable.swift in Sources */,
 				CC5E52E72604332E00619C1A /* TabBarViewController.swift in Sources */,
 				D6FD82E92608BE6E005CBBB2 /* IntExtension.swift in Sources */,
-				D6D3F686260720FD008C5DBA /* HttpHeaderParam.swift in Sources */,
+				D6D3F686260720FD008C5DBA /* HttpApiHeader.swift in Sources */,
 				CC5E52F82604488500619C1A /* SearchResultViewController.swift in Sources */,
 				CC8F4F70260828B6003FFB49 /* ImageCache.swift in Sources */,
 				CC5E52C62604315400619C1A /* SceneDelegate.swift in Sources */,
 				D6D3F692260736F6008C5DBA /* SearchResultTableViewCell.swift in Sources */,
 				D6D3F67C260716B4008C5DBA /* CallHttpApI.swift in Sources */,
-				D6D3F68326072024008C5DBA /* HttpRequestData.swift in Sources */,
+				D6D3F68326072024008C5DBA /* HttpApiRequest.swift in Sources */,
 				D686C47E260A18690042492F /* AppDetailScreenshotCollectionViewCell.swift in Sources */,
 				D6AAFE6F2608CFE60043C177 /* AppDetailReviewTableViewCell.swift in Sources */,
 				CC5E53502604A0BA00619C1A /* SearchTableViewCell.swift in Sources */,

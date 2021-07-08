@@ -12,6 +12,7 @@ target 'SearchApp' do
   pod 'RxCocoa'
   pod 'RxGesture'
   pod 'RxDataSources'
+  pod 'Alamofire'
   # Pods for SearchApp
 
 end
