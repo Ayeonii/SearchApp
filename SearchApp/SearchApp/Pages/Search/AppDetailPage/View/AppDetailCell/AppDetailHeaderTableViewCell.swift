@@ -28,7 +28,13 @@ class AppDetailHeaderTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.iconImage.contentMode = .scaleAspectFill
+        
+        iconImage.roundCorners(cornerRadius: 10)
+        iconImage.contentMode = .scaleAspectFill
+        
+        installBtn.clipsToBounds = true
+        installBtn.layer.cornerRadius = 10
+        
     }
 
 }
