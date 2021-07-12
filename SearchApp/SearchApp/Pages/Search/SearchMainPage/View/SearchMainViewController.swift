@@ -95,6 +95,7 @@ class SearchMainViewController: UIViewController {
                 cellType: SearchMainTableViewCell.self)
             ){indexPath, data, cell in
                 cell.recentLabel.text = data
+                cell.selectionStyle = .none
             }
             .disposed(by: disposeBag)
         
@@ -111,7 +112,6 @@ class SearchMainViewController: UIViewController {
     
     func setupNavigation() {
         searchController = UISearchController(searchResultsController: nil)
-        //searchController?.searchResultsUpdater = self
         
         let navBar = self.navigationController?.navigationBar
         searchController?.searchBar.placeholder = "게임, 앱, 스토리 등"

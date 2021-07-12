@@ -1,5 +1,5 @@
 //
-//  SearchTableData.swift
+//  SearchResultData.swift
 //  SearchApp
 //
 //  Created by 이아연 on 2021/03/21.
@@ -9,10 +9,11 @@ import Foundation
 
 struct AppListData {
     var data : [AppListDataCellModel]?
-    
+    var resultCount : Int?
     init(_ response :  SearchResultResponse){
         var appData : [AppListDataCellModel] = []
         
+        resultCount = response.resultCount
         if let res = response.results {
             appData = res.map {
                 AppListDataCellModel($0)

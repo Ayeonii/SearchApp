@@ -59,11 +59,6 @@ class SearchResultTableViewCell: UITableViewCell {
     
     }
     
-    func setImageRound(_ imageV : UIImageView) {
-       // imageV.makeRadius()
-        imageV.contentMode = .scaleAspectFill
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         iconImage.image = UIImage()
@@ -77,4 +72,11 @@ class SearchResultTableViewCell: UITableViewCell {
         screenShot3.image = UIImage()
     }
     
+}
+
+extension SearchResultTableViewCell {
+    func setImageRound(_ imageV : UIImageView) {
+        imageV.roundCorners(cornerRadius: 10)
+        imageV.contentMode = .scaleAspectFill
+    }
 }
